@@ -1,0 +1,223 @@
+.symptom-extraction-container {
+  animation: fadeIn 0.4s ease;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.extraction-card {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.extraction-content {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(420px, 1.1fr);
+  gap: 32px;
+  padding: 18px 0 8px;
+}
+
+.transcription-section,
+.symptoms-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.transcription-section h3,
+.symptoms-section h3 {
+  margin: 0;
+  color: #12333f;
+  font-size: 1.1rem;
+}
+
+.transcription-textarea {
+  min-height: 360px;
+  padding: 18px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.7;
+  border: 1px solid rgba(129, 151, 161, 0.18);
+  border-radius: 18px;
+  resize: vertical;
+  background: #f8fbfb;
+  color: #263f49;
+}
+
+.transcription-textarea:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+  background: #fff;
+}
+
+.section-help {
+  font-size: 0.9rem;
+  color: #6b818a;
+  margin: 0;
+}
+
+.symptoms-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.symptom-item {
+  background: #fff;
+  border: 1px solid rgba(129, 151, 161, 0.16);
+  border-radius: 18px;
+  padding: 16px;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 26px rgba(31, 54, 64, 0.04);
+}
+
+.symptom-item:hover {
+  border-color: rgba(15, 118, 110, 0.28);
+  box-shadow: 0 14px 30px rgba(31, 54, 64, 0.07);
+}
+
+.symptom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.symptom-info h4 {
+  margin: 0 0 9px;
+  color: #12333f;
+  font-size: 1.02rem;
+}
+
+.symptom-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.badge-severity,
+.badge-primary {
+  padding: 5px 10px !important;
+  border-radius: 999px !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  text-transform: capitalize;
+}
+
+.badge-primary {
+  background: #eef7f7 !important;
+  color: #31515d !important;
+}
+
+.btn-remove {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #8da0a8;
+  transition: all 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.btn-remove:hover {
+  color: #be123c;
+  background: #fff1f2;
+}
+
+.symptom-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.detail-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.detail-group label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #6b818a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.detail-group select {
+  padding: 10px 12px;
+  border: 1px solid rgba(129, 151, 161, 0.2);
+  border-radius: 12px;
+  font-size: 0.92rem;
+  background: #f8fbfb;
+  color: #263f49;
+  cursor: pointer;
+}
+
+.detail-group select:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+}
+
+.add-symptom-section {
+  margin-top: 8px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #f8fbfb;
+  border: 1px solid rgba(129, 151, 161, 0.14);
+}
+
+.add-symptom-section h4 {
+  margin: 0 0 12px;
+  color: #12333f;
+}
+
+.add-symptom-form {
+  display: grid;
+  grid-template-columns: 1fr 150px auto;
+  gap: 10px;
+}
+
+.add-symptom-form input,
+.add-symptom-form select {
+  padding: 11px 12px;
+  border: 1px solid rgba(129, 151, 161, 0.2);
+  border-radius: 12px;
+  font-size: 0.92rem;
+  background: #fff;
+}
+
+.add-symptom-form input:focus,
+.add-symptom-form select:focus {
+  outline: none;
+  border-color: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.1);
+}
+
+.add-symptom-form .btn {
+  padding: 10px 16px;
+}
+
+@media (max-width: 980px) {
+  .extraction-content {
+    grid-template-columns: 1fr;
+  }
+
+  .transcription-textarea {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .symptom-details,
+  .add-symptom-form {
+    grid-template-columns: 1fr;
+  }
+
+  .symptom-header {
+    align-items: flex-start;
+  }
+}

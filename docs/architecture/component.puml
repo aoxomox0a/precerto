@@ -1,0 +1,60 @@
+@startuml
+!NEW_C4_STYLE=1
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+title Component Diagram: FastAPI Server (Simplified Logic)
+
+' --- External Systems (Simplified Names) ---
+Container(patient_app, "Patient Web App", "React", "Pre-Consultation Form")
+Container(doc_dashboard, "Doctor Dashboard", "React", "Live UI & Form Editor")
+Container(whisper, "Speech-to-Text", "Whisper", "Converts live audio to text")
+
+ContainerDb(doc_db, "Session Database", "NoSQL", "Stores active patient sessions & forms")
+ContainerDb(neo4j, "Medical Graph", "Neo4j", "Stores medical relationships")
+Container(scispacy, "Medical Text Extractor", "SciSpacy", "Finds medical terms in text")
+
+' --- The FastAPI Server ---
+Container_Boundary(api, "FastAPI Server") {
+    
+    ' 1. The Entry Points (APIs)
+    Component(api_patient, "Patient Intake API", "Endpoint", "Receives the patient's filled-out form")
+    Component(api_form, "Form Customizer", "Endpoint", "Manages the doctor's custom questions")
+    Component(api_audio, "Live Audio API", "WebSockets", "Keeps the real-time audio connection open")
+    
+    ' 2. The Main Brain
+    Component(core_engine, "Core Logic Engine", "Service", "The brain: coordinates audio, history, and medical rules")
+    
+    ' 3. The Data Links (Drivers)
+    Component(link_db, "Database Link", "Adapter", "Reads and writes temporary patient data")
+    Component(link_graph, "Graph Link", "Adapter", "Searches the medical network for diagnoses")
+    Component(link_nlp, "NLP Link", "Adapter", "Sends transcripts to get medical terms extracted")
+}
+
+' --- Relationships (Simplified Actions) ---
+
+' Flow 1: Customizing the Form
+Rel(doc_dashboard, api_form, "1. Saves custom questions")
+Rel(api_form, link_db, "2. Saves form template")
+
+' Flow 2: Patient Submits Form
+Rel(patient_app, api_patient, "3. Submits filled form")
+Rel(api_patient, link_db, "4. Saves patient data")
+Rel(link_db, doc_db, "5. Stores data")
+
+' Flow 3: Live Consultation
+Rel(doc_dashboard, api_audio, "6. Streams live audio")
+Rel(api_audio, core_engine, "7. Forwards audio chunks")
+Rel(core_engine, whisper, "8. Gets text transcript")
+
+Rel(core_engine, link_db, "9. Gets patient history")
+Rel(core_engine, link_nlp, "10. Sends transcript")
+Rel(link_nlp, scispacy, "11. Extracts medical terms")
+
+Rel(core_engine, link_graph, "12. Asks for diagnosis path")
+Rel(link_graph, neo4j, "13. Searches medical graph")
+
+Rel(core_engine, api_audio, "14. Returns diagnosis path")
+Rel(api_audio, doc_dashboard, "15. Shows results to doctor")
+
+SHOW_LEGEND()
+@enduml

@@ -1,0 +1,208 @@
+.consultation-status-card {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #cbd5e0;
+  transition: all 0.3s ease;
+}
+
+.consultation-status-card[data-status='completed'] {
+  border-left-color: #48bb78;
+  background: linear-gradient(135deg, rgba(72, 187, 120, 0.02), rgba(72, 187, 120, 0.05));
+}
+
+.consultation-status-card[data-status='in-progress'] {
+  border-left-color: #4299e1;
+  background: linear-gradient(135deg, rgba(66, 153, 225, 0.02), rgba(66, 153, 225, 0.05));
+}
+
+.consultation-status-card[data-status='skipped'] {
+  border-left-color: #ed8936;
+  background: linear-gradient(135deg, rgba(237, 137, 54, 0.02), rgba(237, 137, 54, 0.05));
+}
+
+.consultation-status-card[data-status='pending'] {
+  border-left-color: #a0aec0;
+  background: linear-gradient(135deg, rgba(160, 174, 192, 0.02), rgba(160, 174, 192, 0.05));
+}
+
+.status-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.status-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.consultation-status-card[data-status='completed'] .status-icon {
+  background: #c6f6d5;
+  border-color: #48bb78;
+  color: #22543d;
+}
+
+.consultation-status-card[data-status='in-progress'] .status-icon {
+  background: #bee3f8;
+  border-color: #4299e1;
+  color: #1e3a8a;
+}
+
+.consultation-status-card[data-status='skipped'] .status-icon {
+  background: #fed7aa;
+  border-color: #ed8936;
+  color: #7c2d12;
+}
+
+.consultation-status-card[data-status='pending'] .status-icon {
+  background: #edf2f7;
+  border-color: #cbd5e0;
+  color: #4a5568;
+}
+
+.status-text h3 {
+  margin: 0 0 4px 0;
+  color: #2d3748;
+  font-size: 1.1rem;
+}
+
+.status-description {
+  margin: 0;
+  color: #718096;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.status-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.detail-label {
+  color: #718096;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.detail-value {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.detail-item.info-item {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  margin-bottom: 4px;
+}
+
+.detail-item.info-item p {
+  margin: 0;
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding-left: 4px;
+  border-left: 2px solid #ed8936;
+  padding-left: 12px;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.status-badge.success {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.status-badge.info {
+  background: #bee3f8;
+  color: #1e3a8a;
+}
+
+.status-badge.pending {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.badge-icon {
+  font-size: 1rem;
+}
+
+.badge-icon.pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .consultation-status-card {
+    padding: 16px;
+  }
+
+  .status-header {
+    gap: 12px;
+  }
+
+  .status-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .status-text h3 {
+    font-size: 1rem;
+  }
+
+  .detail-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .status-badge {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}

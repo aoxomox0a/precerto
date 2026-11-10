@@ -1,0 +1,260 @@
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border-right: 1px solid rgba(16, 185, 129, 0.08);
+  padding: 20px 14px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 2px 0 8px rgba(6, 78, 59, 0.04);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.brand-label {
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.sidebar-link {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+  background: var(--light-bg);
+  color: var(--primary-color);
+}
+
+.sidebar-link.active {
+  background: rgba(102, 126, 234, 0.1);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* Premium patient sidebar refinement */
+.patient-hub .sidebar {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(247, 252, 249, 0.96));
+  border-right: 1px solid rgba(28, 91, 75, 0.1);
+  box-shadow:
+    inset -1px 0 0 rgba(255, 255, 255, 0.82),
+    8px 0 28px rgba(31, 71, 59, 0.055);
+  padding: 26px 16px;
+}
+
+.patient-hub .sidebar-brand {
+  margin-bottom: 40px;
+  padding: 0 6px 20px;
+  border-bottom: 1px solid rgba(28, 91, 75, 0.08);
+}
+
+.patient-hub .brand-mark {
+  background: linear-gradient(145deg, #0e7a67, #62a886);
+  border-radius: 12px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.24),
+    0 10px 20px rgba(14, 122, 103, 0.13);
+}
+
+.patient-hub .brand-label {
+  color: #073d32;
+  font-size: 1.02rem;
+  letter-spacing: -0.025em;
+}
+
+.patient-hub .sidebar-nav {
+  gap: 10px;
+}
+
+.patient-hub .sidebar-link {
+  border: 1px solid transparent;
+  border-left: 0;
+  border-radius: 12px;
+  color: #5f746d;
+  font-size: 0.93rem;
+  font-weight: 650;
+  padding: 12px 14px;
+}
+
+.patient-hub .sidebar-link:hover {
+  background: rgba(232, 247, 241, 0.58);
+  border-color: rgba(28, 91, 75, 0.08);
+  color: #0b6a59;
+}
+
+.patient-hub .sidebar-link.active {
+  background:
+    linear-gradient(180deg, rgba(236, 248, 242, 0.95), rgba(224, 243, 235, 0.85));
+  border-color: rgba(15, 122, 104, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    0 6px 14px rgba(31, 71, 59, 0.05);
+  color: #0f6b5a;
+}
+
+.patient-hub .sidebar-link {
+  letter-spacing: -0.006em;
+}
+
+.patient-hub .sidebar-link.active {
+  background:
+    linear-gradient(180deg, rgba(240, 249, 244, 0.98), rgba(229, 244, 236, 0.92));
+  border-color: rgba(15, 122, 104, 0.11);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    0 7px 16px rgba(31, 71, 59, 0.048);
+}
+
+.patient-hub .sidebar-link:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.patient-hub .sidebar {
+  padding-top: 26px;
+}
+
+.patient-hub .sidebar-brand {
+  margin-bottom: 42px;
+  padding-bottom: 20px;
+}
+
+.patient-hub .sidebar-nav {
+  gap: 10px;
+}
+
+.patient-hub .sidebar-link.active {
+  background:
+    linear-gradient(180deg, rgba(240, 249, 244, 0.95), rgba(229, 244, 236, 0.85));
+  border-color: rgba(15, 122, 104, 0.10);
+  color: #126454;
+}
+
+/* Final patient sidebar calmness pass */
+.patient-hub .sidebar {
+  border-right-color: rgba(28, 91, 75, 0.075);
+  box-shadow:
+    inset -1px 0 0 rgba(255, 255, 255, 0.86),
+    6px 0 22px rgba(31, 71, 59, 0.04);
+  padding-top: 28px;
+}
+
+.patient-hub .sidebar-brand {
+  margin-bottom: 38px;
+  padding: 0 6px 18px;
+}
+
+.patient-hub .brand-mark {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 8px 16px rgba(14, 122, 103, 0.105);
+}
+
+.patient-hub .sidebar-link {
+  color: rgba(71, 93, 84, 0.76);
+  font-weight: 620;
+}
+
+.patient-hub .sidebar-link:hover {
+  background: rgba(235, 247, 242, 0.46);
+  color: #146757;
+}
+
+.patient-hub .sidebar-link.active {
+  background:
+    linear-gradient(180deg, rgba(244, 250, 246, 0.94), rgba(235, 246, 240, 0.82));
+  border-color: rgba(15, 122, 104, 0.075);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.84),
+    0 5px 12px rgba(31, 71, 59, 0.036);
+  color: #155e50;
+}
+
+/* Premium clinical sidebar integration */
+.patient-hub .sidebar {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(248, 252, 250, 0.97));
+  border-right-color: rgba(28, 91, 75, 0.06);
+  box-shadow:
+    inset -1px 0 0 rgba(255, 255, 255, 0.9),
+    5px 0 18px rgba(31, 71, 59, 0.032);
+  padding: 32px 16px 24px;
+}
+
+.patient-hub .sidebar-brand {
+  margin-bottom: 42px;
+  padding: 0 8px 22px;
+}
+
+.patient-hub .brand-label {
+  color: rgba(7, 61, 50, 0.9);
+  font-weight: 680;
+  letter-spacing: 0;
+}
+
+.patient-hub .brand-mark {
+  border-radius: 13px;
+  transform: translateY(-1px);
+}
+
+.patient-hub .sidebar-nav {
+  gap: 12px;
+}
+
+.patient-hub .sidebar-link {
+  color: rgba(71, 93, 84, 0.7);
+  font-size: 0.92rem;
+  font-weight: 590;
+  padding: 12px 15px;
+}
+
+.patient-hub .sidebar-link.active {
+  background:
+    linear-gradient(180deg, rgba(247, 251, 248, 0.96), rgba(238, 248, 242, 0.84));
+  border-color: rgba(15, 122, 104, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 4px 10px rgba(31, 71, 59, 0.03);
+  color: #155e50;
+  font-weight: 640;
+}

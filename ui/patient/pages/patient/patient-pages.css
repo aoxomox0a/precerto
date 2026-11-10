@@ -1,0 +1,5668 @@
+/* Patient Pages */
+
+/* Patient Hub */
+.patient-hub {
+  display: flex;
+  height: 100dvh;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(187, 247, 208, 0.25), transparent 35%),
+    linear-gradient(135deg, #ffffff 0%, #f8fafc 30%, #f1f5f9 100%);
+}
+
+.patient-navigation {
+  background: rgba(255, 255, 255, 0.94);
+  border-right: 1px solid rgba(16, 185, 129, 0.14);
+  box-shadow: 8px 0 30px rgba(34, 81, 64, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100dvh;
+  min-height: 100vh;
+  padding: 22px 16px;
+  position: sticky;
+  top: 0;
+  width: 240px;
+  z-index: 30;
+}
+
+.patient-navigation-brand {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.patient-navigation-brand .brand-mark {
+  width: 48px;
+  height: 48px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.patient-navigation-brand .brand-mark .portal-nav-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.patient-navigation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.patient-navigation-item {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  color: #0f3f2d;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  width: 100%;
+}
+
+.patient-navigation-item:focus {
+  background: rgba(15, 23, 42, 0.05);
+  border-color: rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  outline: none;
+}
+
+.patient-navigation-item:active {
+  background: rgba(15, 23, 42, 0.07);
+  border-color: rgba(15, 23, 42, 0.1);
+  border-radius: 16px;
+  outline: none;
+}
+
+.patient-navigation-item:hover,
+.patient-navigation-item.active {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.18);
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(34, 81, 64, 0.08);
+}
+
+.patient-navigation-item.active {
+  color: #047857;
+}
+
+.patient-nav-icon {
+  fill: currentColor;
+  flex-shrink: 0;
+  height: 20px;
+  width: 20px;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  margin-left: 0;
+  overflow: hidden;
+}
+
+.top-nav {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.18);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 22px rgba(6, 78, 59, 0.06);
+}
+
+.nav-title {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  min-width: 0;
+}
+
+.top-nav-logo {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 44px;
+  font-size: 1.05rem;
+  font-weight: 820;
+  height: 44px;
+  justify-content: center;
+  line-height: 1;
+  width: 44px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.portal-nav-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.top-nav-logo svg {
+  display: block;
+  font-size: 22px;
+  height: 1em;
+  width: 1em;
+}
+
+.top-nav-logo path:first-child {
+  fill: currentColor;
+}
+
+.top-nav-logo path:last-child {
+  fill: none;
+  stroke: #0b6d58;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.1;
+}
+
+.top-nav-back {
+  align-items: center;
+  background: rgba(15, 118, 110, 0.08);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  border-radius: 999px;
+  color: #0f766e;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 0.92rem;
+  font-weight: 800;
+  height: 24px;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  width: 30px;
+}
+
+.top-nav-back:hover,
+.top-nav-back:focus-visible {
+  background: rgba(15, 118, 110, 0.14);
+  outline: none;
+}
+
+.top-nav-logo:hover,
+.top-nav-logo:focus-visible {
+  box-shadow: 0 8px 18px rgba(12, 111, 91, 0.16);
+  outline: none;
+}
+
+.consultation-recording-block {
+  background: rgba(15, 118, 110, 0.05);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  border-radius: 18px;
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem;
+}
+
+.consultation-recording-block > span {
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.consultation-recording-player-wrap {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.consultation-recording-filename {
+  color: #334155;
+  margin: 0;
+}
+
+.consultation-recording-player {
+  width: 100%;
+}
+
+.nav-title h1 {
+  margin: 0;
+  font-size: 1.12rem;
+  color: #064e3b;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.notification-bell {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.bell-icon {
+  background: none;
+  border: none;
+  border-radius: 999px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.bell-icon:hover {
+  transform: scale(1.1);
+}
+
+.bell-icon:focus,
+.bell-icon:active {
+  background: rgba(15, 23, 42, 0.055);
+  border-radius: 999px;
+  outline: none;
+}
+
+.badge-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--danger-color);
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.notifications-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  width: min(350px, calc(100vw - 32px));
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  margin-top: 8px;
+  padding: 8px;
+  margin-right: 16px;
+}
+
+.notification-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.notification-item:hover {
+  background: var(--light-bg);
+}
+
+.notification-item.read {
+  opacity: 0.6;
+}
+
+.notification-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.notification-item p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.reset-demo-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: #6b7280;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: underline;
+  text-decoration-color: rgba(107, 114, 128, 0.3);
+}
+
+.reset-demo-btn:hover {
+  background: rgba(107, 114, 128, 0.05);
+  color: #374151;
+  text-decoration-color: rgba(107, 114, 128, 0.6);
+}
+
+.content-area {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+  min-height: 0;
+  min-width: 0;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.patient-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboard-header {
+  align-items: stretch;
+  background: #fbfdf8;
+  border: 1px solid rgba(16, 185, 129, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(34, 81, 64, 0.05);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+  margin-bottom: 36px;
+  padding: 24px;
+  overflow: hidden;
+}
+
+@media (min-width: 1200px) {
+  .dashboard-header {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.patient-summary-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(16, 185, 129, 0.08);
+  border-radius: 16px;
+  padding: 22px 20px;
+  box-shadow: 0 8px 20px rgba(34, 81, 64, 0.04);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.patient-summary-card h3 {
+  margin: 0 0 18px 0;
+  font-size: 1.1rem;
+  color: #0f4f38;
+  font-weight: 650;
+}
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.summary-label {
+  font-size: 0.75rem;
+  color: #0284c7;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  word-break: break-word;
+}
+
+.summary-value {
+  font-size: 1rem;
+  color: #0369a1;
+  font-weight: 500;
+  word-break: break-word;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.summary-value.status-active {
+  color: #0284c7;
+  font-weight: 600;
+}
+
+.dashboard-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 1200px) {
+  .summary-label {
+    font-size: 0.7rem;
+  }
+
+  .summary-value {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .summary-label {
+    font-size: 0.65rem;
+  }
+
+  .summary-value {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-summary-card {
+    padding: 16px;
+  }
+
+  .patient-summary-card h3 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .summary-details {
+    gap: 10px;
+  }
+
+  .summary-label {
+    font-size: 0.6rem;
+  }
+
+  .summary-value {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-row {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .patient-summary-card {
+    order: -1; /* Show summary first on mobile */
+  }
+}
+
+.dashboard-section h2 {
+  margin-bottom: 24px;
+  font-size: 1.25rem;
+  color: #064e3b;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.06);
+  padding-bottom: 10px;
+}
+
+.forms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.activity-list {
+  display: grid;
+  gap: 12px;
+}
+
+.activity-item {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 8px rgba(6, 78, 59, 0.04),
+    0 8px 24px rgba(6, 78, 59, 0.06);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 40px minmax(0, 1fr) auto;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+
+.activity-item:hover {
+  box-shadow:
+    0 4px 12px rgba(6, 78, 59, 0.06),
+    0 12px 28px rgba(6, 78, 59, 0.08);
+  transform: translateY(-1px);
+}
+
+.activity-avatar {
+  align-items: center;
+  background: linear-gradient(135deg, #10b981, #047857);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 700;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.activity-copy strong {
+  color: #064e3b;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.activity-copy p {
+  color: #047857;
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.patient-consultation-list {
+  display: grid;
+  gap: 12px;
+}
+
+.patient-consultation-card {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 8px rgba(6, 78, 59, 0.04),
+    0 8px 24px rgba(6, 78, 59, 0.06);
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.patient-consultation-card:hover {
+  box-shadow:
+    0 4px 12px rgba(6, 78, 59, 0.06),
+    0 12px 28px rgba(6, 78, 59, 0.08);
+  transform: translateY(-1px);
+}
+
+.patient-consultation-card h3 {
+  color: #064e3b;
+  margin: 0 0 6px 0;
+}
+
+.patient-consultation-card p,
+.patient-consultation-card small {
+  color: #047857;
+  display: block;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+}
+
+.patient-profile-card {
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 14px 32px rgba(34, 81, 64, 0.05);
+  display: grid;
+  gap: 20px;
+  padding: 24px;
+}
+
+.patient-profile-hero h3 {
+  color: #064e3b;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  margin: 6px 0 8px;
+}
+
+.patient-profile-hero p {
+  color: #047857;
+  font-weight: 700;
+  margin: 0;
+}
+
+.patient-profile-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.patient-profile-item {
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid rgba(16, 185, 129, 0.08);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.patient-profile-item span {
+  color: #0284c7;
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.patient-profile-item strong {
+  color: #0f3f2d;
+  display: block;
+  overflow-wrap: anywhere;
+}
+
+.patient-profile-city-row {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.patient-profile-city-row strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-city-change-btn,
+.profile-city-save-btn,
+.profile-city-cancel-btn {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.16);
+  border-radius: 999px;
+  color: #0f766e;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 8px 12px;
+}
+
+.profile-city-change-btn:hover,
+.profile-city-save-btn:hover,
+.profile-city-cancel-btn:hover,
+.profile-city-change-btn:focus-visible,
+.profile-city-save-btn:focus-visible,
+.profile-city-cancel-btn:focus-visible {
+  background: rgba(16, 185, 129, 0.14);
+  outline: none;
+}
+
+.patient-profile-city-editor {
+  display: grid;
+  gap: 10px;
+}
+
+.patient-profile-city-select {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 14px;
+  color: #0f3f2d;
+  font: inherit;
+  min-height: 42px;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.patient-profile-city-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-city-save-btn {
+  background: linear-gradient(135deg, #0ea5a4, #16a34a);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.profile-city-save-btn:hover,
+.profile-city-save-btn:focus-visible {
+  background: linear-gradient(135deg, #0d9488, #15803d);
+}
+
+.profile-city-cancel-btn {
+  background: rgba(148, 163, 184, 0.12);
+  border-color: rgba(148, 163, 184, 0.18);
+  color: #475569;
+}
+
+.form-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.95));
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 12px;
+  padding: 26px;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 2px 8px rgba(6, 78, 59, 0.04),
+    0 8px 24px rgba(6, 78, 59, 0.06);
+}
+
+.form-card:hover {
+  border-color: rgba(16, 185, 129, 0.24);
+  box-shadow:
+    0 4px 16px rgba(6, 78, 59, 0.08),
+    0 12px 32px rgba(6, 78, 59, 0.1);
+  transform: translateY(-2px);
+}
+
+.clickable-card {
+  cursor: pointer;
+}
+
+.clickable-card:focus {
+  outline: 3px solid rgba(16, 185, 129, 0.28);
+  outline-offset: 3px;
+}
+
+.form-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.15rem;
+  color: #064e3b;
+  line-height: 1.3;
+}
+
+.form-card p {
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  color: #047857;
+  line-height: 1.5;
+}
+
+.form-card small {
+  display: block;
+  margin-bottom: 16px;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.form-progress-container {
+  margin-bottom: 20px;
+}
+
+.summary-link-text {
+  color: #047857;
+  display: inline-block;
+  font-size: 0.86rem;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #dcfce7;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #84cc16, #10b981);
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  font-size: 0.7rem;
+  color: #047857;
+  font-weight: 650;
+}
+
+.form-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-in_progress {
+  background: #d9f99d;
+  color: #3f6212;
+}
+
+.status-completed {
+  background: #bbf7d0;
+  color: #065f46;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #047857;
+}
+
+.patient-form-container {
+  max-width: 800px;
+}
+
+.completed-summary {
+  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+  border: 2px solid rgba(16, 185, 129, 0.16);
+  border-radius: 12px;
+  box-shadow: 0 14px 34px rgba(6, 78, 59, 0.08);
+  margin-top: 18px;
+  padding: 28px;
+}
+
+.completed-summary-header {
+  border-bottom: 2px solid rgba(16, 185, 129, 0.14);
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+}
+
+.completed-summary-header h1 {
+  color: #064e3b;
+  margin: 6px 0 8px;
+}
+
+.completed-summary-header p {
+  color: #047857;
+  font-weight: 700;
+  margin: 0;
+}
+
+.summary-answer-list {
+  display: grid;
+  gap: 12px;
+}
+
+.summary-answer-item {
+  background: white;
+  border: 2px solid rgba(16, 185, 129, 0.12);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.summary-answer-item span {
+  color: #16a34a;
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 900;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.summary-answer-item h3 {
+  color: #064e3b;
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+
+.summary-answer-item p {
+  color: #047857;
+  font-weight: 700;
+  margin: 0;
+}
+
+.flower-progress-card,
+.care-progress-card {
+  align-items: stretch;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(74, 154, 115, 0.08);
+  border-radius: 22px;
+  box-sizing: border-box;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 10px 30px rgba(34, 81, 64, 0.05);
+  display: grid;
+  gap: 18px 26px;
+  grid-template-areas:
+    'visual'
+    'content'
+    'meter'
+    'status';
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+  max-width: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 28px 24px 24px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .flower-progress-card,
+  .care-progress-card {
+    grid-template-areas:
+      'visual content'
+      'visual meter'
+      'visual status';
+    grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+    justify-items: stretch;
+    text-align: left;
+  }
+}
+
+.flower-progress-copy,
+.care-progress-content {
+  grid-area: content;
+  min-width: 0;
+  position: relative;
+  width: 100%;
+  max-width: none;
+  overflow-wrap: break-word;
+  z-index: 1;
+}
+
+.flower-progress-copy strong {
+  align-items: baseline;
+  color: #1f4d38;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 2rem;
+  line-height: 1.18;
+  margin: 0 0 14px;
+  font-weight: 700;
+}
+
+.flower-progress-label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.flower-progress-copy p {
+  color: #4a7a61;
+  font-size: 0.95rem;
+  font-weight: 520;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.flower-kicker {
+  color: #5aa870;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.flower-progress-meter {
+  background: #e9f4ea;
+  border-radius: 999px;
+  grid-area: meter;
+  height: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 320px;
+  margin-top: 12px;
+}
+
+.flower-progress-meter span {
+  background: linear-gradient(90deg, #8ccf8b, #5eaf7f);
+  border-radius: inherit;
+  display: block;
+  height: 100%;
+  transition: width 0.45s ease;
+}
+
+.flower-progress-status {
+  color: #5e8e70;
+  display: block;
+  font-size: 0.86rem;
+  font-weight: 680;
+  grid-area: status;
+  line-height: 1.35;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.flower-visual,
+.care-progress-visual {
+  align-items: center;
+  display: flex;
+  grid-area: visual;
+  aspect-ratio: 1 / 1;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 300px;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.care-progress-illustration {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  width: 100%;
+}
+
+.care-progress-illustration::after {
+  background: radial-gradient(ellipse at center, rgba(45, 106, 68, 0.08) 0%, rgba(90, 145, 103, 0.03) 46%, transparent 74%);
+  border-radius: 999px;
+  bottom: 2px;
+  content: '';
+  height: 18px;
+  left: 24px;
+  position: absolute;
+  right: 24px;
+  z-index: -1;
+}
+
+.care-progress-plant,
+.care-progress-image {
+  animation: plantGrowIn 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  display: block;
+  height: 78%;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0.92;
+  transform-origin: center bottom;
+  width: 78%;
+}
+
+@keyframes plantGrowIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.flower-stage-caption {
+  display: none;
+}
+
+.flower-stage-caption strong {
+  color: #2f6849;
+  margin-right: 8px;
+}
+
+@media (min-width: 900px) {
+  .flower-progress-card,
+  .care-progress-card {
+    align-items: center;
+    gap: 24px 36px;
+    grid-template-areas:
+      'visual content'
+      'visual meter'
+      'visual status';
+    grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+    justify-items: stretch;
+    min-height: 320px;
+    padding: 32px 36px;
+    text-align: left;
+  }
+
+  .flower-visual,
+  .care-progress-visual {
+    max-width: 360px;
+  }
+
+  .flower-progress-copy,
+  .care-progress-content {
+    max-width: none;
+  }
+
+  .flower-progress-meter {
+    width: min(100%, 320px);
+  }
+}
+
+@media (max-width: 480px) {
+  .flower-progress-card,
+  .care-progress-card {
+    border-radius: 18px;
+    gap: 16px;
+    padding: 22px 16px 20px;
+  }
+
+  .flower-progress-copy strong {
+    font-size: 1.75rem;
+  }
+
+  .flower-progress-label {
+    font-size: 1.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-progress-meter span {
+    animation: none;
+    transition: none;
+  }
+}
+
+.tree-progress-card {
+  align-items: center;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fcfb 52%, #f5f9f7 100%);
+  border: 1px solid rgba(74, 154, 115, 0.12);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 12px 28px rgba(34, 81, 64, 0.08);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 170px minmax(0, 1fr);
+  min-height: 220px;
+  overflow: hidden;
+  padding: 28px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tree-visual {
+  height: 160px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Stem - refined and elegant */
+.tree-trunk {
+  background: linear-gradient(90deg, #5aa870 0%, #6cbd7a 45%, #4a9860 100%);
+  border-radius: 999px;
+  bottom: 46px;
+  height: 80px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 7px;
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(34, 81, 64, 0.12);
+}
+
+/* Refined flower for completed state */
+.tree-trunk::before {
+  background: #f5dfa5;
+  border-radius: 50%;
+  content: '';
+  height: 20px;
+  left: 50%;
+  opacity: 1;
+  position: absolute;
+  top: -26px;
+  transform: translateX(-50%);
+  width: 20px;
+  z-index: 8;
+  box-shadow:
+    0 -14px 0 5px rgba(237, 198, 162, 0.7),
+    12px -5px 0 4px rgba(237, 198, 162, 0.68),
+    11px 12px 0 5px rgba(237, 198, 162, 0.66),
+    -11px 12px 0 5px rgba(237, 198, 162, 0.66),
+    -12px -5px 0 4px rgba(237, 198, 162, 0.68);
+}
+.tree-trunk::after {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  content: '';
+  height: 6px;
+  left: 6px;
+  opacity: 1;
+  position: absolute;
+  top: -22px;
+  width: 6px;
+  z-index: 9;
+}
+
+/* Refined leaves */
+.tree-branch {
+  background: linear-gradient(135deg, #5aa870 0%, #4a9860 60%, #3d8350 100%);
+  border-radius: 65% 35% 68% 32% / 68% 40% 60% 32%;
+  bottom: 56px;
+  height: 38px;
+  left: 50%;
+  position: absolute;
+  transform-origin: left center;
+  width: 60px;
+  z-index: 4;
+  box-shadow: 0 1px 2px rgba(34, 81, 64, 0.15);
+}
+
+.tree-branch::before,
+.tree-branch::after {
+  display: none;
+}
+
+.tree-branch-left {
+  transform: translateX(-58px) rotate(26deg);
+}
+
+.tree-branch-right {
+  transform: translateX(6px) rotate(-26deg) scaleX(-1);
+}
+
+/* Smaller refined leaves for growing stage */
+.tree-leaf-cluster {
+  background: linear-gradient(135deg, #5aa870 0%, #4a9860 60%, #3d8350 100%);
+  border-radius: 65% 35% 68% 32% / 68% 40% 60% 32%;
+  height: 30px;
+  left: 50%;
+  position: absolute;
+  width: 46px;
+  z-index: 4;
+  box-shadow: 0 1px 2px rgba(34, 81, 64, 0.12);
+}
+
+.tree-leaf-left {
+  bottom: 86px;
+  transform: translateX(-50px) rotate(32deg) scale(0.72);
+}
+
+.tree-leaf-right {
+  bottom: 90px;
+  transform: translateX(4px) rotate(-32deg) scaleX(-1) scale(0.72);
+}
+
+.tree-leaf-top {
+  bottom: 118px;
+  transform: translateX(-22px) rotate(-18deg) scale(0.58);
+}
+
+.tree-leaf-center {
+  bottom: 108px;
+  transform: translateX(2px) rotate(22deg) scaleX(-1) scale(0.58);
+}
+
+/* Refined pot */
+.tree-ground {
+  background: linear-gradient(180deg, #dcc9a0 0%, #cdb892 100%);
+  border-radius: 8px 8px 16px 16px;
+  bottom: 10px;
+  height: 44px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 98px;
+  z-index: 3;
+  box-shadow: 0 3px 8px rgba(80, 58, 32, 0.1);
+}
+
+.tree-ground::before {
+  background: linear-gradient(180deg, #ede0c5 0%, #d5bf91 100%);
+  border-radius: 999px;
+  box-shadow: 0 3px 8px rgba(80, 58, 32, 0.08);
+  content: '';
+  height: 22px;
+  left: -8px;
+  position: absolute;
+  top: -11px;
+  width: 114px;
+}
+
+.tree-ground::after {
+  background: #6b4528;
+  border-radius: 50%;
+  content: '';
+  height: 11px;
+  left: 10px;
+  position: absolute;
+  top: -5px;
+  width: 78px;
+  z-index: 2;
+}
+
+.tree-ground span {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(45, 106, 68, 0.1) 0%,
+    rgba(90, 145, 103, 0.04) 40%,
+    transparent 70%
+  );
+  border-radius: 999px;
+  bottom: -15px;
+  display: block;
+  height: 20px;
+  left: -22px;
+  position: absolute;
+  width: 146px;
+  z-index: -1;
+}
+
+/* Text */
+.tree-progress-copy {  min-width: 0;
+  width: 100%;  position: relative;
+  z-index: 1;
+}
+
+.tree-progress-copy strong {
+  color: #1f4d38;
+  display: block;
+  font-size: 1.65rem;
+  line-height: 1.15;
+  margin: 4px 0 8px;
+  font-weight: 700;
+}
+
+.tree-progress-copy p {
+  color: #4a8463;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.tree-kicker {
+  color: #5aa870;
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Progress-based plant states - refined colors */
+.tree-progress-card[data-progress='0'] .tree-trunk,
+.tree-progress-card[data-progress='0'] .tree-branch,
+.tree-progress-card[data-progress='0'] .tree-leaf-cluster {
+  display: none;
+}
+
+.tree-progress-card[data-progress='0'] .tree-ground::after {
+  background:
+    linear-gradient(135deg, #6b4d35 0%, #8a6340 55%, #4f3620 100%);
+  border-radius: 48% 52% 46% 54% / 50% 45% 55% 50%;
+  height: 30px;
+  left: 40px;
+  top: -30px;
+  transform: rotate(-6deg);
+  width: 22px;
+}
+
+.tree-progress-card[data-progress='25'] .tree-trunk {
+  height: 44px;
+}
+
+.tree-progress-card[data-progress='25'] .tree-trunk::before,
+.tree-progress-card[data-progress='25'] .tree-trunk::after,
+.tree-progress-card[data-progress='25'] .tree-leaf-top,
+.tree-progress-card[data-progress='25'] .tree-leaf-center {
+  display: none;
+}
+
+.tree-progress-card[data-progress='25'] .tree-branch {
+  bottom: 80px;
+  height: 26px;
+  width: 38px;
+}
+
+.tree-progress-card[data-progress='25'] .tree-branch-left {
+  transform: translateX(-38px) rotate(26deg) scale(0.65);
+}
+
+.tree-progress-card[data-progress='25'] .tree-branch-right {
+  transform: translateX(4px) rotate(-26deg) scaleX(-1) scale(0.65);
+}
+
+.tree-progress-card[data-progress='50'] .tree-trunk {
+  height: 65px;
+}
+
+.tree-progress-card[data-progress='50'] .tree-trunk::before,
+.tree-progress-card[data-progress='50'] .tree-trunk::after {
+  display: none;
+}
+
+.tree-progress-card[data-progress='50'] .tree-branch {
+  width: 50px;
+}
+
+.tree-progress-card[data-progress='75'] .tree-trunk {
+  height: 80px;
+}
+
+.tree-progress-card[data-progress='75'] .tree-trunk::before,
+.tree-progress-card[data-progress='75'] .tree-trunk::after {
+  display: none;
+}
+
+.tree-progress-card[data-progress='100'] .tree-trunk::before,
+.tree-progress-card[data-progress='100'] .tree-trunk::after {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .patient-hub {
+    align-items: stretch;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .patient-navigation {
+    position: sticky;
+    top: 0;
+    height: 100dvh;
+    min-height: 100vh;
+    width: 240px;
+    border-right: 1px solid rgba(16, 185, 129, 0.14);
+    border-top: none;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    flex-direction: column;
+    padding: 22px 16px;
+    box-shadow: 8px 0 30px rgba(34, 81, 64, 0.04);
+  }
+
+  .patient-navigation-brand {
+    display: flex;
+  }
+
+  .patient-navigation-list {
+    flex-direction: column;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .patient-navigation-item {
+    flex: none;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 14px 16px;
+  }
+
+  .patient-navigation-item span {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .content-area {
+    padding-bottom: 24px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .patient-navigation {
+    border-right: none;
+    border-top: 1px solid rgba(16, 185, 129, 0.14);
+    bottom: 0;
+    box-shadow: 0 -8px 24px rgba(34, 81, 64, 0.1);
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    height: 52px;
+    left: 0;
+    padding: 6px 10px;
+    position: fixed;
+    top: auto;
+    width: 100vw;
+    transform: none;
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(14px);
+  }
+
+  .patient-navigation-brand {
+    display: none;
+  }
+
+  .patient-navigation-list {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 6px;
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .patient-navigation-item {
+    flex: 0 0 40px;
+    flex-direction: column;
+    gap: 0;
+    height: 40px;
+    justify-content: center;
+    padding: 0;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+
+  .patient-navigation-item:hover,
+  .patient-navigation-item.active {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+  }
+
+  .patient-navigation-item.active {
+    color: #0f7a68;
+  }
+
+  .patient-navigation-item span {
+    display: none;
+  }
+
+  .top-nav {
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    justify-content: space-between;
+  }
+
+  .dashboard-header {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .patient-hub > .sidebar {
+    display: none;
+  }
+
+  .tree-progress-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .forms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .notifications-panel {
+    width: calc(100vw - 32px);
+  }
+
+  .content-area {
+    padding-bottom: 72px;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  body,
+  #root {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .patient-hub,
+  .main-content,
+  .top-nav,
+  .content-area,
+  .patient-dashboard,
+  .dashboard-header,
+  .dashboard-section,
+  .patient-form-container {
+    box-sizing: border-box;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .patient-hub {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  .main-content {
+    flex: none;
+    margin-left: 0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 100%;
+  }
+
+  .top-nav {
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 12px 14px;
+    width: 100%;
+  }
+
+  .nav-title {
+    min-width: 0;
+  }
+
+  .nav-title h1 {
+    font-size: clamp(0.9rem, 4vw, 1.05rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  .top-nav-logo {
+    border-radius: 10px;
+    flex-basis: 32px;
+    font-size: 0.95rem;
+    height: 32px;
+    width: 32px;
+  }
+
+  .nav-actions {
+    flex-shrink: 0;
+    gap: 8px;
+  }
+
+  .bell-icon {
+    align-items: center;
+    display: inline-flex;
+    font-size: 1.15rem;
+    height: 40px;
+    justify-content: center;
+    width: 40px;
+  }
+
+  .badge-count {
+    right: -4px;
+    top: -4px;
+  }
+
+  .patient-selector,
+  .doctor-selector {
+    font-size: 0.82rem;
+    max-width: 132px;
+    min-height: 40px;
+    padding: 8px 9px;
+  }
+
+  .notifications-panel {
+    max-width: calc(100vw - 24px);
+    right: 0;
+    width: min(350px, calc(100vw - 24px));
+  }
+
+  .content-area {
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 16px 14px 72px;
+    width: 100%;
+  }
+
+  .patient-navigation-item {
+    border-radius: 14px;
+    font-size: 0.72rem;
+  }
+
+  .patient-dashboard {
+    margin: 0;
+    width: 100%;
+  }
+
+  .dashboard-header {
+    align-items: stretch;
+    gap: 18px;
+    grid-template-columns: 1fr;
+    margin-bottom: 24px;
+    min-height: 0;
+    overflow: visible;
+    padding: 18px 14px;
+  }
+
+  .dashboard-welcome {
+    min-width: 0;
+  }
+
+  .dashboard-header h1 {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-header p {
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
+  .flower-progress-card {
+    gap: 16px;
+    justify-self: center;
+    margin-inline: auto;
+    max-width: 100%;
+    min-height: 0;
+    overflow: hidden;
+    padding: 22px 16px 20px;
+    width: 100%;
+  }
+
+  .flower-visual {
+    aspect-ratio: 1 / 1;
+    height: auto;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .care-progress-illustration {
+    height: 100%;
+    width: 100%;
+  }
+
+  .care-progress-plant,
+  .flower-stage-complete .care-progress-plant {
+    height: 100%;
+    width: 100%;
+  }
+
+  .flower-progress-copy strong {
+    font-size: clamp(1.45rem, 8vw, 1.85rem);
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .flower-progress-label {
+    font-size: 1rem;
+  }
+
+  .flower-progress-copy p {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+
+  .flower-progress-meter {
+    width: 100%;
+  }
+
+  .flower-progress-status {
+    overflow-wrap: anywhere;
+  }
+
+  .dashboard-section {
+    margin-bottom: 24px;
+    min-width: 0;
+  }
+
+  .forms-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .form-card,
+  .activity-item,
+  .patient-consultation-card {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .form-card-header {
+    gap: 10px;
+  }
+
+  .activity-item {
+    align-items: start;
+    grid-template-columns: 42px minmax(0, 1fr);
+    padding: 14px;
+  }
+
+  .activity-avatar {
+    height: 42px;
+    width: 42px;
+  }
+
+  .activity-copy,
+  .activity-copy strong,
+  .activity-copy p,
+  .patient-consultation-card h3,
+  .patient-consultation-card p,
+  .patient-consultation-card small,
+  .form-card h3,
+  .form-card p {
+    overflow-wrap: anywhere;
+  }
+
+  .activity-item .badge {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .patient-consultation-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .patient-consultation-card .badge {
+    align-self: flex-start;
+  }
+
+  .patient-form-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .top-nav {
+    padding-inline: 10px;
+  }
+
+  .content-area {
+    padding-inline: 10px;
+  }
+
+  .dashboard-header {
+    padding-inline: 12px;
+  }
+
+  .patient-selector,
+  .doctor-selector {
+    max-width: 116px;
+  }
+
+  .flower-progress-card {
+    max-width: 100%;
+  }
+}
+
+/* Care Progress layout constraint fix */
+.flower-progress-copy strong {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.flower-progress-copy p,
+.flower-progress-status {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+@media (min-width: 900px) and (max-width: 1120px) {
+  .dashboard-header {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .care-progress-card {
+    grid-template-areas:
+      'visual'
+      'content'
+      'meter'
+      'status';
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    text-align: center;
+  }
+
+  .care-progress-visual {
+    justify-self: center;
+    max-width: 220px;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .care-progress-card .flower-progress-meter {
+    max-width: 320px;
+  }
+
+  .care-progress-copy strong {
+    justify-content: center;
+  }
+
+  .care-progress-copy p,
+  .care-progress-status {
+    overflow-wrap: anywhere;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 76%;
+    width: 76%;
+  }
+}
+
+@media (min-width: 1121px) {
+  .dashboard-header {
+    grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(132px, 28%) minmax(0, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 196px;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .flower-progress-copy p,
+  .flower-progress-status {
+    overflow-wrap: break-word;
+  }
+}
+
+/* Premium patient dashboard refinement */
+.patient-hub {
+  --primary-color: #0f7a68;
+  --primary-dark: #075f51;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(207, 235, 220, 0.36), transparent 30rem),
+    radial-gradient(circle at 86% 18%, rgba(221, 238, 231, 0.46), transparent 26rem),
+    linear-gradient(135deg, #fbfdfc 0%, #f5faf8 48%, #eef6f3 100%);
+}
+
+.content-area {
+  padding: 26px;
+}
+
+.patient-dashboard {
+  max-width: 1220px;
+}
+
+.top-nav {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(38, 102, 86, 0.1);
+  box-shadow: 0 10px 28px rgba(31, 71, 59, 0.055);
+}
+
+.nav-title h1 {
+  color: #073d32;
+  letter-spacing: -0.035em;
+}
+
+.dashboard-header {
+  align-items: stretch;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(247, 252, 249, 0.98));
+  border-color: rgba(42, 119, 93, 0.12);
+  border-radius: 18px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 16px 42px rgba(31, 71, 59, 0.075);
+  gap: 18px;
+  margin-bottom: 28px;
+  padding: 18px;
+}
+
+.patient-summary-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 253, 251, 0.96));
+  border-color: rgba(42, 119, 93, 0.1);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 10px 26px rgba(30, 78, 61, 0.055);
+  padding: 20px;
+}
+
+.patient-summary-card h3 {
+  color: #073d32;
+  font-size: 1.08rem;
+  font-weight: 740;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.summary-details {
+  gap: 10px;
+}
+
+.summary-item {
+  align-items: flex-start;
+  gap: 18px;
+  padding: 2px 0;
+}
+
+.summary-label {
+  color: #5d7c70;
+  flex: 0 0 45%;
+  font-size: 0.74rem;
+  font-weight: 760;
+  letter-spacing: 0.085em;
+}
+
+.summary-value {
+  color: #143f36;
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1.35;
+  text-align: right;
+}
+
+.summary-value.status-active {
+  color: #0a7c61;
+}
+
+.care-progress-card {
+  background:
+    radial-gradient(circle at 21% 47%, rgba(223, 240, 230, 0.52), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, #fbfefd 52%, #f4faf7 100%);
+  border-color: rgba(74, 137, 106, 0.13);
+  border-radius: 22px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 18px 46px rgba(34, 81, 64, 0.085);
+  overflow: hidden;
+}
+
+.care-progress-visual {
+  max-width: 300px;
+}
+
+.care-progress-illustration::after {
+  background: radial-gradient(ellipse at center, rgba(45, 106, 68, 0.13) 0%, rgba(90, 145, 103, 0.055) 48%, transparent 76%);
+  bottom: 2px;
+  height: 24px;
+}
+
+.care-progress-plant,
+.care-progress-image {
+  height: 96%;
+  opacity: 0.9;
+  width: 96%;
+}
+
+.flower-progress-copy strong {
+  color: #194a38;
+  font-weight: 780;
+  letter-spacing: -0.035em;
+}
+
+.flower-progress-copy p {
+  color: #4f8064;
+  font-weight: 600;
+}
+
+.flower-progress-status {
+  color: #5d846e;
+  font-weight: 720;
+}
+
+.flower-progress-meter {
+  background: rgba(83, 151, 104, 0.14);
+}
+
+.flower-progress-meter span,
+.progress-fill {
+  background: linear-gradient(90deg, #8ccf98, #3fae75);
+}
+
+.dashboard-row {
+  gap: 28px;
+  margin-bottom: 30px;
+}
+
+.dashboard-section h2 {
+  border-bottom-color: rgba(42, 119, 93, 0.11);
+  color: #073d32;
+  font-size: 1.22rem;
+  font-weight: 740;
+  letter-spacing: -0.025em;
+}
+
+.form-card,
+.activity-item,
+.patient-consultation-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 253, 251, 0.96));
+  border-color: rgba(42, 119, 93, 0.11);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 10px 28px rgba(32, 76, 60, 0.06);
+}
+
+.form-card {
+  padding: 22px;
+}
+
+.form-card:hover,
+.activity-item:hover,
+.patient-consultation-card:hover {
+  border-color: rgba(42, 119, 93, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 16px 36px rgba(32, 76, 60, 0.085);
+  transform: translateY(-1px);
+}
+
+.form-card h3,
+.patient-consultation-card h3,
+.activity-copy strong {
+  color: #073d32;
+  font-weight: 720;
+  letter-spacing: -0.02em;
+}
+
+.form-card p,
+.patient-consultation-card p,
+.patient-consultation-card small,
+.activity-copy p {
+  color: #587b6b;
+  font-weight: 620;
+}
+
+.form-card small {
+  color: #3e7865;
+  font-weight: 680;
+}
+
+.badge {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 780;
+  letter-spacing: 0.055em;
+  padding: 6px 10px;
+}
+
+.status-pending {
+  background: #fff8df;
+  border-color: rgba(146, 96, 14, 0.1);
+  color: #8a5a12;
+}
+
+.status-in_progress {
+  background: #edf9df;
+  border-color: rgba(82, 122, 24, 0.12);
+  color: #4a6f18;
+}
+
+.status-completed {
+  background: #e7f7ee;
+  border-color: rgba(6, 95, 70, 0.12);
+  color: #075f4c;
+}
+
+.progress-bar {
+  background: #e1f3e8;
+  height: 7px;
+}
+
+.progress-text,
+.summary-link-text {
+  color: #0a7c61;
+}
+
+.patient-hub .button-primary,
+.patient-hub .button-success {
+  background: linear-gradient(180deg, #0f8a70 0%, #08705e 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 10px 22px rgba(8, 112, 94, 0.16);
+}
+
+.patient-hub .button-primary:hover:not(:disabled),
+.patient-hub .button-success:hover:not(:disabled) {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 14px 28px rgba(8, 112, 94, 0.2);
+  transform: translateY(-1px);
+}
+
+.patient-hub .button-secondary,
+.patient-hub .button-outline {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(15, 122, 104, 0.24);
+  color: #0a705f;
+}
+
+.patient-hub .button-secondary:hover:not(:disabled),
+.patient-hub .button-outline:hover:not(:disabled) {
+  background: rgba(232, 247, 241, 0.74);
+  border-color: rgba(15, 122, 104, 0.34);
+}
+
+@media (min-width: 768px) {
+  .care-progress-card {
+    grid-template-columns: minmax(220px, 42%) minmax(240px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 310px;
+  }
+}
+
+@media (min-width: 1121px) {
+  .dashboard-header {
+    grid-template-columns: minmax(0, 1fr) minmax(520px, 1fr);
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(235px, 44%) minmax(260px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 18px;
+  }
+
+  .dashboard-header {
+    padding: 16px;
+  }
+
+  .care-progress-visual {
+    max-width: 260px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 94%;
+    width: 94%;
+  }
+
+  .summary-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .summary-label,
+  .summary-value {
+    flex: none;
+    text-align: left;
+  }
+}
+
+/* Premium cohesion and rhythm pass */
+.dashboard-header {
+  margin-bottom: 22px;
+}
+
+.dashboard-row {
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.dashboard-section {
+  min-width: 0;
+}
+
+.dashboard-section h2 {
+  align-items: center;
+  display: flex;
+  font-size: 1.14rem;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 7px;
+}
+
+.dashboard-section h2::before {
+  background: linear-gradient(180deg, #7acb94, #2f9b70);
+  border-radius: 999px;
+  content: "";
+  height: 18px;
+  width: 3px;
+}
+
+.patient-consultation-list,
+.activity-list {
+  gap: 10px;
+}
+
+.forms-grid {
+  gap: 16px;
+}
+
+.care-progress-card {
+  align-items: center;
+  gap: 10px 14px;
+  padding: 22px 22px 20px;
+}
+
+.care-progress-content {
+  align-self: end;
+}
+
+.flower-progress-copy strong {
+  margin-bottom: 6px;
+}
+
+.flower-progress-copy p {
+  line-height: 1.38;
+}
+
+.care-progress-card .flower-progress-meter {
+  align-self: start;
+  margin-top: 2px;
+}
+
+.care-progress-card .flower-progress-status {
+  align-self: start;
+  margin-top: -2px;
+}
+
+.care-progress-illustration {
+  overflow: visible;
+}
+
+.care-progress-visual {
+  transform: translateX(4px);
+}
+
+.care-progress-plant,
+.care-progress-image {
+  transform-origin: center bottom;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 238px;
+  padding: 20px;
+}
+
+.form-card-header {
+  gap: 14px;
+  margin-bottom: 10px;
+}
+
+.form-card h3 {
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
+.form-card p {
+  color: #526f64;
+  font-size: 0.92rem;
+  line-height: 1.46;
+  margin-bottom: 12px;
+}
+
+.form-card small {
+  border-top: 1px solid rgba(42, 119, 93, 0.08);
+  color: #557869;
+  margin-bottom: 12px;
+  padding-top: 10px;
+}
+
+.form-progress-container {
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.form-card .button {
+  margin-top: 2px;
+}
+
+.summary-link-text {
+  align-items: center;
+  align-self: flex-start;
+  border-radius: 999px;
+  background: rgba(232, 247, 241, 0.72);
+  border: 1px solid rgba(15, 122, 104, 0.12);
+  display: inline-flex;
+  margin-top: 2px;
+  padding: 7px 11px;
+}
+
+.empty-state {
+  align-items: center;
+  background:
+    radial-gradient(circle at 18% 24%, rgba(226, 242, 233, 0.62), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(249, 253, 251, 0.9));
+  border: 1px solid rgba(42, 119, 93, 0.1);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.84),
+    0 8px 20px rgba(31, 71, 59, 0.045);
+  color: #5b7b6d;
+  display: flex;
+  font-size: 0.94rem;
+  font-weight: 650;
+  gap: 12px;
+  justify-content: flex-start;
+  line-height: 1.45;
+  min-height: 88px;
+  padding: 18px;
+  text-align: left;
+}
+
+.empty-state::before {
+  align-items: center;
+  background: linear-gradient(180deg, #edf8f2, #e2f1ea);
+  border: 1px solid rgba(42, 119, 93, 0.1);
+  border-radius: 14px;
+  color: #0b705e;
+  content: "+";
+  display: inline-flex;
+  flex: 0 0 38px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  height: 38px;
+  justify-content: center;
+  line-height: 1;
+  width: 38px;
+}
+
+@media (min-width: 768px) {
+  .care-progress-card {
+    column-gap: 10px;
+    grid-template-columns: minmax(245px, 44%) minmax(255px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 350px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 108%;
+    width: 108%;
+  }
+}
+
+@media (min-width: 1121px) {
+  .care-progress-card {
+    column-gap: 8px;
+    grid-template-columns: minmax(265px, 45%) minmax(270px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 370px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-row {
+    gap: 18px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header,
+  .dashboard-row {
+    margin-bottom: 20px;
+  }
+
+  .forms-grid {
+    gap: 14px;
+  }
+
+  .care-progress-card {
+    padding: 20px 16px;
+  }
+
+  .care-progress-visual {
+    max-width: 285px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 102%;
+    width: 102%;
+  }
+
+  .empty-state {
+    min-height: 78px;
+    padding: 15px;
+  }
+}
+
+/* High-end patient workspace orchestration */
+.top-nav {
+  padding-block: 14px;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.88),
+    0 8px 24px rgba(31, 71, 59, 0.045);
+}
+
+.content-area {
+  padding-top: 22px;
+}
+
+.dashboard-header {
+  gap: 14px;
+  padding: 16px;
+}
+
+.summary-value {
+  color: #214b41;
+  font-size: 0.91rem;
+  font-weight: 610;
+}
+
+.summary-label {
+  color: #668176;
+  font-weight: 720;
+}
+
+.care-progress-card {
+  gap: 8px 8px;
+  justify-self: stretch;
+  padding: 20px 20px 18px;
+}
+
+.flower-progress-copy strong {
+  font-size: 1.84rem;
+  font-weight: 740;
+  gap: 6px;
+  letter-spacing: -0.04em;
+}
+
+.flower-progress-label {
+  color: #315e4a;
+  font-size: 1.06rem;
+  font-weight: 640;
+}
+
+.flower-progress-copy p {
+  color: #5f846e;
+  font-size: 0.93rem;
+}
+
+.flower-progress-status {
+  color: #6a8877;
+  font-size: 0.82rem;
+  font-weight: 660;
+}
+
+.care-progress-card .flower-progress-meter {
+  height: 7px;
+  margin-top: 0;
+}
+
+.patient-consultation-card {
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+}
+
+.patient-consultation-card > div {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.patient-consultation-card h3 {
+  font-size: 1.02rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.patient-consultation-card p,
+.patient-consultation-card small {
+  color: #637f72;
+  font-size: 0.88rem;
+  font-weight: 610;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.patient-consultation-card small {
+  align-items: center;
+  background: rgba(236, 248, 242, 0.58);
+  border: 1px solid rgba(42, 119, 93, 0.08);
+  border-radius: 999px;
+  color: #487566;
+  display: inline-flex;
+  justify-self: start;
+  padding: 5px 9px;
+}
+
+.patient-consultation-card small::before {
+  background: #67b88c;
+  border-radius: 999px;
+  content: "";
+  height: 6px;
+  margin-right: 7px;
+  width: 6px;
+}
+
+.badge {
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 720;
+  letter-spacing: 0.045em;
+  padding: 5px 9px;
+}
+
+.status-pending {
+  background: rgba(255, 248, 223, 0.74);
+  border-color: rgba(146, 96, 14, 0.08);
+  color: #7c571c;
+}
+
+.status-in_progress {
+  background: rgba(237, 249, 223, 0.68);
+  border-color: rgba(82, 122, 24, 0.09);
+  color: #587425;
+}
+
+.status-completed {
+  background: rgba(231, 247, 238, 0.7);
+  border-color: rgba(6, 95, 70, 0.09);
+  color: #1f6855;
+}
+
+.form-card {
+  min-height: 216px;
+  padding: 18px;
+}
+
+.form-card-header {
+  margin-bottom: 8px;
+}
+
+.form-card h3 {
+  font-size: 1rem;
+}
+
+.form-card p {
+  font-size: 0.89rem;
+  line-height: 1.42;
+  margin-bottom: 10px;
+}
+
+.form-card small {
+  margin-bottom: 10px;
+  padding-top: 8px;
+}
+
+.form-progress-container {
+  margin-bottom: 10px;
+}
+
+.progress-text {
+  color: #42806b;
+  font-size: 0.72rem;
+  font-weight: 680;
+}
+
+.summary-link-text {
+  padding-block: 6px;
+}
+
+@media (min-width: 1121px) {
+  .dashboard-header {
+    grid-template-columns: minmax(350px, 0.94fr) minmax(480px, 0.98fr);
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(285px, 48%) minmax(250px, 1fr);
+    max-width: 590px;
+    justify-self: end;
+  }
+
+  .care-progress-visual {
+    max-width: 415px;
+    transform: translateX(8px);
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 118%;
+    width: 118%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .care-progress-card {
+    grid-template-columns: minmax(270px, 46%) minmax(250px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 385px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 114%;
+    width: 114%;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-nav {
+    padding-block: 12px;
+  }
+
+  .content-area {
+    padding-top: 18px;
+  }
+
+  .flower-progress-copy strong {
+    font-size: 1.7rem;
+  }
+
+  .care-progress-visual {
+    max-width: 300px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 108%;
+    width: 108%;
+  }
+
+  .form-card {
+    min-height: 0;
+  }
+}
+
+/* Final premium orchestration tuning */
+.top-nav {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(250, 253, 251, 0.94));
+}
+
+.nav-title h1 {
+  font-size: 1.42rem;
+  font-weight: 760;
+}
+
+.dashboard-header {
+  align-items: center;
+  justify-content: center;
+}
+
+.patient-summary-card {
+  align-self: stretch;
+}
+
+.care-progress-card {
+  align-self: stretch;
+  column-gap: 4px;
+  max-width: 100%;
+}
+
+.care-progress-content,
+.care-progress-card .flower-progress-meter,
+.care-progress-card .flower-progress-status {
+  transform: translateX(-6px);
+}
+
+.flower-progress-copy strong {
+  font-size: 1.72rem;
+  line-height: 1.08;
+}
+
+.flower-progress-label {
+  font-size: 0.98rem;
+}
+
+.care-progress-card .flower-progress-meter {
+  width: min(100%, 280px);
+}
+
+.patient-consultation-card {
+  border-left: 3px solid rgba(55, 154, 111, 0.18);
+  min-height: 94px;
+}
+
+.patient-consultation-card .badge {
+  align-self: flex-start;
+  margin-top: 1px;
+}
+
+.activity-item .badge,
+.patient-consultation-card .badge,
+.form-card .badge {
+  opacity: 0.86;
+}
+
+.status-in_progress {
+  background: rgba(241, 249, 231, 0.58);
+  color: #657a34;
+}
+
+.status-completed {
+  background: rgba(235, 248, 241, 0.58);
+  color: #2e6f5d;
+}
+
+.form-card {
+  min-height: 198px;
+  padding: 16px;
+}
+
+.form-card-header {
+  align-items: flex-start;
+}
+
+.form-card p {
+  margin-bottom: 8px;
+}
+
+.form-card small {
+  margin-bottom: 8px;
+}
+
+.form-progress-container {
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 6px;
+  margin-bottom: 5px;
+}
+
+.summary-link-text {
+  font-size: 0.82rem;
+}
+
+@media (min-width: 1121px) {
+  .dashboard-header {
+    grid-template-columns: minmax(360px, 430px) minmax(500px, 570px);
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(300px, 50%) minmax(230px, 1fr);
+    justify-self: stretch;
+    max-width: 570px;
+  }
+
+  .care-progress-visual {
+    max-width: 450px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 130%;
+    width: 130%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .dashboard-header {
+    max-width: 920px;
+    margin-inline: auto;
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(295px, 48%) minmax(245px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 420px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 122%;
+    width: 122%;
+  }
+}
+
+@media (max-width: 768px) {
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    transform: none;
+  }
+
+  .patient-consultation-card {
+    min-height: 0;
+  }
+}
+
+/* Premium clinical experience refinement */
+.patient-dashboard {
+  max-width: 1240px;
+}
+
+.content-area {
+  padding: 30px;
+}
+
+.dashboard-header {
+  gap: 30px;
+  padding: 34px;
+  border-color: rgba(42, 119, 93, 0.095);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 18px 48px rgba(31, 71, 59, 0.072);
+}
+
+.patient-summary-card,
+.care-progress-card,
+.form-card,
+.activity-item,
+.patient-consultation-card {
+  border-color: rgba(42, 119, 93, 0.085);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    0 12px 32px rgba(31, 71, 59, 0.055);
+}
+
+.patient-summary-card {
+  padding: 26px;
+}
+
+.patient-summary-card h3 {
+  font-size: 1.06rem;
+  font-weight: 720;
+  margin-bottom: 20px;
+}
+
+.summary-details {
+  gap: 13px;
+}
+
+.summary-label {
+  color: #6f877c;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.summary-value {
+  color: #244d42;
+  font-size: 0.93rem;
+  font-weight: 590;
+}
+
+.care-progress-card {
+  background:
+    radial-gradient(circle at 24% 48%, rgba(221, 239, 229, 0.62), transparent 43%),
+    linear-gradient(180deg, #ffffff 0%, #fbfefd 54%, #f4faf7 100%);
+  gap: 10px 12px;
+  padding: 28px 28px 26px;
+}
+
+.care-progress-visual {
+  filter: drop-shadow(0 18px 28px rgba(45, 88, 61, 0.09));
+}
+
+.care-progress-illustration::before {
+  background: radial-gradient(circle at 50% 54%, rgba(186, 220, 198, 0.28), rgba(255, 255, 255, 0) 62%);
+  border-radius: 999px;
+  content: "";
+  inset: 10% 2% 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.flower-progress-copy strong {
+  color: #18483a;
+  font-size: 1.92rem;
+  font-weight: 760;
+  letter-spacing: -0.042em;
+  margin-bottom: 8px;
+}
+
+.flower-progress-label {
+  color: #3f6854;
+  font-size: 1.04rem;
+  font-weight: 620;
+}
+
+.flower-progress-copy p {
+  color: #607f70;
+  font-size: 0.94rem;
+  font-weight: 540;
+  line-height: 1.5;
+}
+
+.flower-progress-status {
+  color: #708a7c;
+  font-size: 0.82rem;
+  font-weight: 630;
+}
+
+.care-progress-card .flower-progress-meter,
+.progress-bar {
+  background: rgba(129, 183, 146, 0.16);
+  height: 6px;
+}
+
+.flower-progress-meter span,
+.progress-fill {
+  background: linear-gradient(90deg, #9ed2a6 0%, #58b87d 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.dashboard-row {
+  gap: 26px;
+  margin-bottom: 26px;
+}
+
+.dashboard-section h2 {
+  color: #123f34;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.018em;
+  margin-bottom: 16px;
+}
+
+.dashboard-section h2::before {
+  background: linear-gradient(180deg, #8ecfa0, #3a9b70);
+  height: 16px;
+  opacity: 0.86;
+}
+
+.form-card {
+  border-radius: 18px;
+  min-height: 226px;
+  padding: 20px;
+}
+
+.form-card h3 {
+  color: #143f35;
+  font-size: 1.03rem;
+  font-weight: 690;
+}
+
+.form-card p {
+  color: #5d786d;
+  font-size: 0.91rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.form-card small {
+  color: #5a7d6d;
+  font-weight: 620;
+  margin-bottom: 12px;
+}
+
+.form-progress-container {
+  margin-bottom: 12px;
+}
+
+.patient-hub .button {
+  min-height: 38px;
+  border-radius: 11px;
+  font-weight: 680;
+}
+
+.patient-hub .button-primary,
+.patient-hub .button-success {
+  background: linear-gradient(180deg, #12806a 0%, #0a6757 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    0 8px 18px rgba(8, 112, 94, 0.14);
+}
+
+.patient-hub .button-secondary,
+.patient-hub .button-outline {
+  border-width: 1px;
+  color: #0c6d5d;
+}
+
+.patient-consultation-card,
+.activity-item {
+  border-radius: 16px;
+}
+
+.patient-consultation-card:hover,
+.activity-item:hover,
+.form-card:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 18px 40px rgba(31, 71, 59, 0.078);
+}
+
+@media (min-width: 900px) {
+  .dashboard-header {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 1121px) {
+  .dashboard-header {
+    grid-template-columns: minmax(0, 52fr) minmax(0, 48fr);
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(315px, 52%) minmax(230px, 1fr);
+    max-width: none;
+  }
+
+  .care-progress-visual {
+    max-width: 500px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 148%;
+    width: 148%;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    transform: translateX(-10px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .dashboard-header {
+    padding: 28px;
+  }
+
+  .care-progress-visual {
+    max-width: 450px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 132%;
+    width: 132%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 18px;
+  }
+
+  .dashboard-header {
+    gap: 18px;
+    padding: 18px;
+  }
+
+  .patient-summary-card,
+  .care-progress-card {
+    padding: 20px;
+  }
+
+  .care-progress-visual {
+    max-width: 320px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 116%;
+    width: 116%;
+  }
+}
+
+/* Premium balance correction */
+.dashboard-header {
+  gap: 34px;
+}
+
+.care-progress-card {
+  column-gap: 24px;
+  padding: 30px 34px 28px 28px;
+}
+
+.care-progress-content,
+.care-progress-card .flower-progress-meter,
+.care-progress-card .flower-progress-status {
+  transform: none;
+}
+
+.care-progress-content {
+  align-self: center;
+  padding-right: 18px;
+}
+
+.flower-progress-copy strong {
+  align-items: baseline;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.flower-progress-copy p {
+  line-height: 1.52;
+  margin-bottom: 2px;
+}
+
+.care-progress-card .flower-progress-meter {
+  margin-top: 8px;
+  margin-bottom: 4px;
+  width: min(100%, 320px);
+}
+
+.care-progress-card .flower-progress-status {
+  margin-top: 2px;
+}
+
+.care-progress-visual {
+  filter: drop-shadow(0 14px 22px rgba(45, 88, 61, 0.07));
+}
+
+.care-progress-illustration::before {
+  opacity: 0.72;
+}
+
+.dashboard-section h2 {
+  font-size: 1.08rem;
+  font-weight: 660;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding-bottom: 9px;
+}
+
+.dashboard-section h2::before {
+  height: 14px;
+  opacity: 0.7;
+  width: 2px;
+}
+
+.form-card {
+  padding: 20px 20px 18px;
+}
+
+.form-card p {
+  margin-bottom: 13px;
+}
+
+.form-card small {
+  margin-bottom: 14px;
+}
+
+.form-progress-container {
+  margin-bottom: 14px;
+}
+
+.form-card .button {
+  margin-top: 4px;
+}
+
+.progress-bar {
+  height: 5px;
+  margin-bottom: 7px;
+}
+
+.progress-text {
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.patient-hub .button {
+  min-height: 40px;
+  box-shadow: none;
+}
+
+.patient-hub .button-primary,
+.patient-hub .button-success {
+  background: linear-gradient(180deg, #147b68 0%, #0b6254 100%);
+  box-shadow: 0 7px 16px rgba(8, 112, 94, 0.115);
+}
+
+.patient-hub .button-primary:hover:not(:disabled),
+.patient-hub .button-success:hover:not(:disabled) {
+  box-shadow: 0 10px 20px rgba(8, 112, 94, 0.15);
+}
+
+@media (min-width: 1121px) {
+  .care-progress-card {
+    grid-template-columns: minmax(260px, 43%) minmax(270px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 400px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 122%;
+    width: 122%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .care-progress-card {
+    column-gap: 22px;
+    padding-right: 30px;
+  }
+
+  .care-progress-visual {
+    max-width: 365px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 116%;
+    width: 116%;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    gap: 20px;
+  }
+
+  .care-progress-card {
+    padding: 22px 20px;
+  }
+
+  .care-progress-content {
+    padding-right: 0;
+  }
+
+  .care-progress-visual {
+    max-width: 280px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 108%;
+    width: 108%;
+  }
+}
+
+/* Care journey card premium clinical balance */
+.care-progress-card {
+  background:
+    radial-gradient(circle at 25% 48%, rgba(220, 237, 226, 0.46), transparent 36%),
+    linear-gradient(180deg, #ffffff 0%, #fcfefd 56%, #f6faf8 100%);
+  border-color: rgba(48, 108, 82, 0.095);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 10px 24px rgba(31, 71, 59, 0.052),
+    0 28px 58px rgba(31, 71, 59, 0.058);
+  column-gap: 20px;
+  padding: 30px 30px 28px;
+}
+
+.care-progress-visual {
+  filter: drop-shadow(0 12px 20px rgba(45, 88, 61, 0.065));
+}
+
+.care-progress-illustration::before {
+  background: radial-gradient(circle at 50% 57%, rgba(189, 219, 199, 0.22), rgba(255, 255, 255, 0) 62%);
+  opacity: 0.68;
+}
+
+.care-progress-illustration::after {
+  background: radial-gradient(ellipse at center, rgba(45, 106, 68, 0.09) 0%, rgba(90, 145, 103, 0.035) 48%, transparent 76%);
+  bottom: 4px;
+  height: 18px;
+}
+
+.flower-progress-copy,
+.care-progress-content {
+  align-self: end;
+  display: grid;
+  gap: 10px;
+  max-width: 390px;
+  padding-right: 0;
+}
+
+.flower-progress-copy strong {
+  align-items: baseline;
+  display: inline-flex;
+  gap: 8px;
+  letter-spacing: 0;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.flower-progress-value {
+  color: #174639;
+  font-size: 1.72rem;
+  font-weight: 720;
+}
+
+.flower-progress-label {
+  color: rgba(34, 81, 64, 0.72);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.flower-progress-copy p {
+  color: rgba(57, 91, 76, 0.72);
+  font-size: 0.93rem;
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.care-progress-card .flower-progress-meter {
+  background: rgba(80, 139, 101, 0.095);
+  border-radius: 999px;
+  height: 4px;
+  margin: 12px 0 0;
+  max-width: 390px;
+  width: 100%;
+}
+
+.flower-progress-meter span {
+  background: linear-gradient(90deg, #9bcfa3 0%, #67b786 100%);
+  box-shadow: none;
+}
+
+.care-progress-card .flower-progress-status {
+  color: rgba(77, 112, 94, 0.66);
+  font-size: 0.79rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 8px;
+  max-width: 390px;
+}
+
+@media (min-width: 1121px) {
+  .care-progress-card {
+    grid-template-columns: minmax(235px, 39%) minmax(290px, 1fr);
+    min-height: 292px;
+    padding: 30px 32px 28px 28px;
+  }
+
+  .care-progress-visual {
+    max-width: 360px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 112%;
+    width: 112%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .care-progress-card {
+    column-gap: 18px;
+    padding: 28px 28px 26px;
+  }
+
+  .care-progress-visual {
+    max-width: 335px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 106%;
+    width: 106%;
+  }
+}
+
+@media (max-width: 768px) {
+  .care-progress-card {
+    gap: 14px;
+    padding: 22px 20px 21px;
+  }
+
+  .flower-progress-copy,
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    max-width: 100%;
+  }
+
+  .flower-progress-copy strong {
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .flower-progress-value {
+    font-size: 1.58rem;
+  }
+
+  .flower-progress-label {
+    font-size: 0.84rem;
+  }
+
+  .care-progress-card .flower-progress-meter {
+    margin-top: 6px;
+  }
+
+  .care-progress-visual {
+    max-width: 250px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image {
+    height: 98%;
+    width: 98%;
+  }
+}
+
+/* Completed care journey final polish */
+.care-progress-card {
+  background:
+    radial-gradient(circle at 24% 47%, rgba(221, 237, 226, 0.36), transparent 34%),
+    linear-gradient(180deg, #ffffff 0%, #fcfefd 58%, #f7faf8 100%);
+  border-color: rgba(48, 108, 82, 0.075);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 8px 20px rgba(31, 71, 59, 0.044),
+    0 22px 48px rgba(31, 71, 59, 0.048);
+  row-gap: 9px;
+}
+
+.care-progress-visual {
+  filter: drop-shadow(0 10px 18px rgba(45, 88, 61, 0.055));
+}
+
+.care-progress-illustration::before {
+  opacity: 0.54;
+}
+
+.care-progress-illustration::after {
+  opacity: 0.72;
+}
+
+.flower-stage-complete .care-progress-illustration::before {
+  background: radial-gradient(circle at 50% 58%, rgba(187, 218, 198, 0.18), rgba(255, 255, 255, 0) 64%);
+}
+
+.flower-stage-complete .care-progress-visual::before,
+.flower-stage-complete .care-progress-visual::after {
+  opacity: 0.42;
+  transform: scale(0.86);
+}
+
+.flower-stage-complete .care-progress-plant,
+.flower-stage-complete .care-progress-image {
+  opacity: 0.9;
+}
+
+.flower-progress-copy,
+.care-progress-content {
+  align-self: end;
+  gap: 9px;
+}
+
+.flower-progress-copy strong {
+  gap: 7px;
+}
+
+.flower-progress-value {
+  font-size: 1.62rem;
+  font-weight: 690;
+}
+
+.flower-progress-label {
+  color: rgba(34, 81, 64, 0.64);
+  font-size: 0.82rem;
+  font-weight: 560;
+  transform: translateY(-1px);
+}
+
+.flower-progress-copy p {
+  color: rgba(57, 91, 76, 0.66);
+  font-size: 0.91rem;
+  font-weight: 480;
+  max-width: 340px;
+}
+
+.care-progress-card .flower-progress-meter {
+  background: rgba(80, 139, 101, 0.075);
+  height: 3px;
+  margin-top: 10px;
+  max-width: 340px;
+}
+
+.flower-progress-meter span {
+  background: linear-gradient(90deg, #a8d4ad 0%, #78bd8f 100%);
+}
+
+.care-progress-card .flower-progress-status {
+  color: rgba(77, 112, 94, 0.58);
+  font-size: 0.76rem;
+  font-weight: 560;
+  letter-spacing: 0;
+  margin-top: 7px;
+  max-width: 340px;
+}
+
+@media (min-width: 1121px) {
+  .care-progress-card {
+    grid-template-columns: minmax(220px, 37%) minmax(300px, 1fr);
+    min-height: 284px;
+    padding: 32px 34px 30px 30px;
+  }
+
+  .care-progress-visual {
+    max-width: 336px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 104%;
+    width: 104%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .care-progress-visual {
+    max-width: 315px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .care-progress-card {
+    padding: 23px 20px 22px;
+  }
+
+  .care-progress-visual {
+    max-width: 235px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 94%;
+    width: 94%;
+  }
+
+  .flower-progress-value {
+    font-size: 1.5rem;
+  }
+
+  .flower-progress-label {
+    font-size: 0.8rem;
+  }
+
+  .flower-progress-copy p,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    max-width: 100%;
+  }
+}
+
+/* Final patient dashboard premium polish */
+.dashboard-header {
+  align-items: stretch;
+  gap: 30px;
+  padding: 36px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.97),
+    0 12px 30px rgba(31, 71, 59, 0.052),
+    0 30px 64px rgba(31, 71, 59, 0.052);
+}
+
+.patient-summary-card,
+.care-progress-card,
+.form-card,
+.activity-item,
+.patient-consultation-card {
+  border-color: rgba(42, 119, 93, 0.068);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 10px 28px rgba(31, 71, 59, 0.046);
+}
+
+.patient-summary-card {
+  padding: 28px;
+}
+
+.care-progress-card {
+  align-content: center;
+  column-gap: 18px;
+  padding: 34px 34px 32px;
+  row-gap: 13px;
+}
+
+.care-progress-content {
+  align-self: end;
+  gap: 12px;
+}
+
+.flower-stage-complete .care-progress-visual::before,
+.flower-stage-complete .care-progress-visual::after {
+  opacity: 0.32;
+}
+
+.care-progress-illustration::after {
+  opacity: 0.58;
+}
+
+.flower-progress-copy p {
+  margin-top: 2px;
+}
+
+.care-progress-card .flower-progress-meter {
+  margin-top: 14px;
+}
+
+.care-progress-card .flower-progress-status {
+  margin-top: 9px;
+}
+
+.dashboard-section h2 {
+  color: #18483c;
+  font-size: 1.03rem;
+  font-weight: 630;
+  gap: 10px;
+  letter-spacing: 0;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.dashboard-section h2::before {
+  background: linear-gradient(180deg, rgba(130, 190, 151, 0.72), rgba(58, 147, 106, 0.66));
+  height: 12px;
+  opacity: 0.64;
+  width: 2px;
+}
+
+.forms-grid {
+  align-items: stretch;
+}
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 238px;
+  padding: 22px 22px 20px;
+}
+
+.form-card-header {
+  margin-bottom: 10px;
+}
+
+.form-card h3 {
+  font-size: 1rem;
+  font-weight: 660;
+  letter-spacing: 0;
+  line-height: 1.28;
+}
+
+.form-card p {
+  color: rgba(63, 89, 78, 0.74);
+  line-height: 1.52;
+  margin-bottom: 12px;
+}
+
+.form-card small {
+  color: rgba(74, 105, 91, 0.66);
+  font-weight: 560;
+  margin-bottom: 16px;
+}
+
+.form-progress-container {
+  margin: auto 0 16px;
+  padding-top: 8px;
+}
+
+.progress-bar {
+  background: rgba(80, 139, 101, 0.078);
+  height: 3px;
+  margin-bottom: 9px;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #a8d3ad 0%, #75bb8d 100%);
+  box-shadow: none;
+}
+
+.progress-text {
+  color: rgba(77, 112, 94, 0.62);
+  display: block;
+  font-size: 0.76rem;
+  font-weight: 560;
+  line-height: 1.25;
+  margin-bottom: 0;
+}
+
+.form-card .button {
+  margin-top: 4px;
+}
+
+.summary-link-text {
+  color: rgba(12, 109, 93, 0.74);
+  display: inline-flex;
+  font-size: 0.8rem;
+  font-weight: 620;
+  margin-top: 3px;
+}
+
+.form-card.clickable-card .summary-link-text {
+  margin-top: 4px;
+}
+
+.patient-consultation-card:hover,
+.activity-item:hover,
+.form-card:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 14px 34px rgba(31, 71, 59, 0.06);
+}
+
+@media (min-width: 1121px) {
+  .dashboard-header {
+    grid-template-columns: minmax(0, 51fr) minmax(0, 49fr);
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(210px, 36%) minmax(310px, 1fr);
+    padding-right: 38px;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .dashboard-header {
+    padding: 30px;
+  }
+
+  .care-progress-card {
+    padding: 30px;
+  }
+
+  .form-card {
+    min-height: 228px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .patient-summary-card,
+  .care-progress-card {
+    padding: 22px;
+  }
+
+  .care-progress-card {
+    row-gap: 14px;
+  }
+
+  .form-card {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .form-progress-container {
+    margin-top: 18px;
+  }
+}
+
+/* Your Forms card clinical polish */
+.form-card {
+  padding: 24px 24px 22px;
+}
+
+.form-card-header {
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 2px 0 0;
+}
+
+.form-card h3 {
+  color: #16463a;
+  font-size: 1.01rem;
+  font-weight: 640;
+  line-height: 1.34;
+  margin: 0;
+}
+
+.form-card .badge {
+  border: 1px solid rgba(42, 119, 93, 0.055);
+  border-radius: 999px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  font-size: 0.68rem;
+  font-weight: 620;
+  letter-spacing: 0.035em;
+  line-height: 1;
+  padding: 0.42rem 0.68rem;
+}
+
+.form-card .status-completed {
+  background: rgba(238, 248, 242, 0.62);
+  color: rgba(42, 104, 85, 0.78);
+}
+
+.form-card .status-in_progress {
+  background: rgba(244, 249, 236, 0.58);
+  color: rgba(96, 113, 52, 0.78);
+}
+
+.form-card .status-pending {
+  background: rgba(247, 250, 249, 0.82);
+  color: rgba(82, 105, 96, 0.72);
+}
+
+.form-card p {
+  color: rgba(63, 89, 78, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.58;
+  margin-bottom: 14px;
+}
+
+.form-card small {
+  color: rgba(74, 105, 91, 0.58);
+  font-size: 0.78rem;
+  font-weight: 540;
+  margin-bottom: 18px;
+}
+
+.form-progress-container {
+  border-top-color: rgba(42, 119, 93, 0.055);
+  margin-top: auto;
+  margin-bottom: 17px;
+  padding-top: 15px;
+}
+
+.form-card .button,
+.form-card .summary-link-text {
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .form-card {
+    padding: 21px;
+  }
+
+  .form-card-header {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+}
+
+/* Care journey final cohesion pass */
+.care-progress-card {
+  background:
+    radial-gradient(circle at 29% 50%, rgba(222, 238, 228, 0.3), transparent 31%),
+    linear-gradient(180deg, #ffffff 0%, #fcfefd 58%, #f7faf8 100%);
+  border-color: rgba(48, 108, 82, 0.06);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 8px 18px rgba(31, 71, 59, 0.038),
+    0 20px 44px rgba(31, 71, 59, 0.044);
+  column-gap: 12px;
+  padding: 34px 36px 32px 32px;
+}
+
+.care-progress-visual {
+  filter: drop-shadow(0 8px 15px rgba(45, 88, 61, 0.045));
+}
+
+.care-progress-illustration::before {
+  background: radial-gradient(circle at 52% 60%, rgba(188, 218, 198, 0.14), rgba(255, 255, 255, 0) 62%);
+  inset: 13% 8% 2%;
+  opacity: 0.48;
+}
+
+.care-progress-illustration::after {
+  background: radial-gradient(ellipse at center, rgba(45, 106, 68, 0.06) 0%, rgba(90, 145, 103, 0.024) 48%, transparent 76%);
+  bottom: 7px;
+  height: 14px;
+  left: 46px;
+  right: 46px;
+}
+
+.care-progress-content,
+.care-progress-card .flower-progress-meter,
+.care-progress-card .flower-progress-status {
+  max-width: 350px;
+}
+
+.care-progress-content {
+  align-self: center;
+  gap: 11px;
+}
+
+.flower-progress-copy strong {
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.flower-progress-value {
+  font-size: 1.54rem;
+  font-weight: 660;
+}
+
+.flower-progress-label {
+  color: rgba(34, 81, 64, 0.58);
+  font-size: 0.79rem;
+  font-weight: 520;
+  transform: translateY(-1px);
+}
+
+.flower-progress-copy p {
+  color: rgba(57, 91, 76, 0.62);
+  font-size: 0.9rem;
+  line-height: 1.58;
+  margin-top: 3px;
+}
+
+.care-progress-card .flower-progress-meter {
+  background: rgba(80, 139, 101, 0.058);
+  height: 2px;
+  margin-top: 17px;
+}
+
+.flower-progress-meter span {
+  background: linear-gradient(90deg, #b3d8b6 0%, #82c196 100%);
+}
+
+.care-progress-card .flower-progress-status {
+  color: rgba(77, 112, 94, 0.52);
+  font-size: 0.74rem;
+  font-weight: 520;
+  margin-top: 10px;
+}
+
+@media (min-width: 1121px) {
+  .care-progress-card {
+    grid-template-columns: minmax(220px, 38%) minmax(300px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 326px;
+    transform: translateX(8px);
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    transform: translateX(-6px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .care-progress-card {
+    column-gap: 10px;
+    padding: 30px 32px;
+  }
+
+  .care-progress-visual {
+    max-width: 305px;
+    transform: translateX(4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .care-progress-card {
+    padding: 23px 21px 22px;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    max-width: 100%;
+    transform: none;
+  }
+
+  .care-progress-visual {
+    transform: none;
+  }
+
+  .flower-progress-value {
+    font-size: 1.45rem;
+  }
+}
+
+/* Your Forms bottom stack spacing fix */
+.form-progress-container {
+  display: grid;
+  gap: 10px;
+  margin: auto 0 20px;
+  padding-top: 16px;
+}
+
+.form-card .progress-bar {
+  height: 2px;
+  margin: 0 0 2px;
+}
+
+.form-card .progress-fill {
+  background: linear-gradient(90deg, #b6d9bb 0%, #86c49a 100%);
+}
+
+.form-card .progress-text {
+  color: rgba(77, 112, 94, 0.56);
+  font-size: 0.74rem;
+  font-weight: 520;
+  line-height: 1.3;
+  margin: 0 0 4px;
+}
+
+.form-card .button {
+  margin-top: 2px;
+}
+
+.form-card .summary-link-text {
+  align-self: flex-start;
+  color: rgba(12, 109, 93, 0.7);
+  margin-top: 2px;
+  padding-top: 2px;
+}
+
+.form-card.clickable-card .form-progress-container {
+  margin-bottom: 14px;
+}
+
+.form-card.clickable-card .summary-link-text {
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .form-progress-container {
+    gap: 9px;
+    margin-top: 20px;
+    margin-bottom: 18px;
+    padding-top: 15px;
+  }
+}
+
+/* Premium clinical SaaS refinement pass */
+.patient-dashboard {
+  max-width: 1268px;
+}
+
+.content-area {
+  padding: 34px;
+}
+
+.dashboard-header {
+  gap: 34px;
+  padding: 40px;
+  border-color: rgba(42, 119, 93, 0.055);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 14px 34px rgba(31, 71, 59, 0.046),
+    0 34px 72px rgba(31, 71, 59, 0.045);
+}
+
+.patient-summary-card,
+.care-progress-card,
+.form-card,
+.activity-item,
+.patient-consultation-card {
+  border-color: rgba(42, 119, 93, 0.055);
+  border-radius: 20px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 8px 22px rgba(31, 71, 59, 0.038),
+    0 20px 46px rgba(31, 71, 59, 0.034);
+}
+
+.patient-summary-card {
+  padding: 32px;
+}
+
+.patient-summary-card h3 {
+  font-size: 1.08rem;
+  font-weight: 680;
+  margin-bottom: 24px;
+}
+
+.summary-details {
+  gap: 15px;
+}
+
+.summary-item {
+  padding-bottom: 13px;
+}
+
+.summary-label {
+  color: rgba(83, 112, 98, 0.7);
+  font-weight: 660;
+}
+
+.summary-value {
+  color: rgba(26, 72, 58, 0.86);
+  font-weight: 560;
+}
+
+.care-progress-card {
+  column-gap: 16px;
+  padding: 38px 40px 36px 34px;
+  row-gap: 16px;
+}
+
+.care-progress-content {
+  gap: 14px;
+}
+
+.care-progress-visual {
+  filter: drop-shadow(0 10px 18px rgba(45, 88, 61, 0.052));
+}
+
+.flower-progress-value {
+  font-size: 1.62rem;
+  font-weight: 650;
+}
+
+.flower-progress-label {
+  color: rgba(34, 81, 64, 0.6);
+  font-size: 0.8rem;
+  font-weight: 520;
+}
+
+.flower-progress-copy p {
+  color: rgba(57, 91, 76, 0.64);
+  line-height: 1.62;
+  margin-top: 5px;
+}
+
+.care-progress-card .flower-progress-meter {
+  background: rgba(80, 139, 101, 0.07);
+  height: 4px;
+  margin-top: 18px;
+}
+
+.flower-progress-meter span {
+  background: linear-gradient(90deg, #abd3b0 0%, #7abe91 100%);
+}
+
+.care-progress-card .flower-progress-status {
+  color: rgba(77, 112, 94, 0.56);
+  margin-top: 12px;
+}
+
+.dashboard-row {
+  gap: 30px;
+  margin-bottom: 34px;
+}
+
+.dashboard-section {
+  margin-bottom: 34px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(16, 185, 129, 0.08);
+  border-radius: 22px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.96),
+    0 10px 28px rgba(31, 71, 59, 0.05);
+  padding: 18px;
+}
+
+.dashboard-section h2 {
+  color: #16463a;
+  font-size: 1.08rem;
+  font-weight: 680;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+}
+
+.dashboard-section h2::before {
+  background: linear-gradient(180deg, rgba(130, 190, 151, 0.78), rgba(58, 147, 106, 0.68));
+  height: 13px;
+  opacity: 0.68;
+}
+
+.patient-consultation-list,
+.activity-list {
+  gap: 16px;
+}
+
+.patient-consultation-card,
+.activity-item {
+  align-items: center;
+  min-height: 104px;
+  padding: 20px;
+}
+
+.patient-profile-section,
+.consultations-section,
+.activity-section {
+  position: relative;
+}
+
+.patient-profile-section h2,
+.consultations-section h2,
+.activity-section h2,
+.patient-profile-card,
+.patient-profile-grid,
+.patient-profile-item {
+  position: relative;
+  z-index: 1;
+}
+
+.activity-item {
+  gap: 16px;
+}
+
+.patient-consultation-card > div,
+.activity-item > div {
+  display: grid;
+  gap: 7px;
+}
+
+.patient-consultation-card h3,
+.activity-item h3 {
+  color: #16463a;
+  font-size: 1.01rem;
+  font-weight: 640;
+  line-height: 1.3;
+}
+
+.patient-consultation-card p,
+.patient-consultation-card small,
+.activity-item p,
+.activity-item small {
+  color: rgba(76, 104, 91, 0.68);
+  font-weight: 520;
+  line-height: 1.45;
+}
+
+.patient-consultation-card .badge,
+.activity-item .badge {
+  align-self: center;
+  opacity: 0.78;
+}
+
+.forms-grid {
+  gap: 22px;
+}
+
+.form-card {
+  min-height: 248px;
+}
+
+.patient-consultation-card:hover,
+.activity-item:hover,
+.form-card:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 12px 30px rgba(31, 71, 59, 0.052),
+    0 24px 52px rgba(31, 71, 59, 0.04);
+}
+
+@media (min-width: 1121px) {
+  .dashboard-header {
+    grid-template-columns: minmax(0, 50fr) minmax(0, 50fr);
+  }
+
+  .care-progress-card {
+    grid-template-columns: minmax(230px, 39%) minmax(300px, 1fr);
+  }
+
+  .care-progress-visual {
+    max-width: 372px;
+    transform: translate(10px, -8px);
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 116%;
+    width: 116%;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    max-width: 372px;
+    transform: translateX(-4px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .content-area {
+    padding: 28px;
+  }
+
+  .dashboard-header {
+    padding: 34px;
+  }
+
+  .care-progress-card {
+    padding: 34px;
+  }
+
+  .care-progress-visual {
+    max-width: 340px;
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    gap: 22px;
+    padding: 22px;
+  }
+
+  .patient-summary-card,
+  .care-progress-card {
+    padding: 24px;
+  }
+
+  .care-progress-visual {
+    max-width: 260px;
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 104%;
+    width: 104%;
+  }
+
+  .patient-consultation-card,
+  .activity-item {
+    min-height: 0;
+    padding: 18px;
+  }
+}
+
+/* Patient progress composition refinement */
+.care-progress-card {
+  background:
+    radial-gradient(circle at 31% 43%, rgba(224, 239, 229, 0.5), transparent 39%),
+    linear-gradient(180deg, #fffefe 0%, #fcfdfb 54%, #f7faf7 100%);
+  border-color: rgba(46, 105, 80, 0.062);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    0 12px 30px rgba(31, 71, 59, 0.044),
+    0 28px 58px rgba(31, 71, 59, 0.04);
+  column-gap: 10px;
+  overflow: hidden;
+}
+
+.care-progress-content,
+.care-progress-card .flower-progress-meter,
+.care-progress-card .flower-progress-status {
+  justify-self: stretch;
+  max-width: none;
+}
+
+.care-progress-content {
+  align-self: end;
+  gap: 11px;
+}
+
+.flower-progress-copy strong {
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.flower-progress-value {
+  color: #173f35;
+  font-size: 1.76rem;
+  font-weight: 680;
+  letter-spacing: -0.025em;
+}
+
+.flower-progress-label {
+  color: rgba(34, 81, 64, 0.58);
+  font-size: 0.82rem;
+  font-weight: 540;
+  transform: translateY(-1px);
+}
+
+.flower-progress-copy p {
+  color: rgba(57, 91, 76, 0.62);
+  font-size: 0.91rem;
+  font-weight: 480;
+  line-height: 1.56;
+  margin-top: 2px;
+}
+
+.care-progress-card .flower-progress-meter {
+  background: rgba(95, 144, 112, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  box-shadow:
+    inset 0 1px 2px rgba(54, 96, 72, 0.035),
+    0 1px 0 rgba(255, 255, 255, 0.78);
+  height: 6px;
+  margin: 15px 0 0;
+  width: 100%;
+}
+
+.flower-progress-meter span {
+  background: linear-gradient(90deg, #a9d1af 0%, #7abb90 54%, #66ab7e 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    0 0 12px rgba(102, 171, 126, 0.16);
+}
+
+.care-progress-card .flower-progress-status {
+  color: rgba(77, 112, 94, 0.54);
+  font-size: 0.75rem;
+  font-weight: 540;
+  line-height: 1.34;
+  margin-top: 9px;
+}
+
+.care-progress-visual {
+  filter: drop-shadow(0 16px 24px rgba(45, 88, 61, 0.06));
+}
+
+.care-progress-illustration::before {
+  background: radial-gradient(circle at 55% 56%, rgba(190, 218, 198, 0.2), rgba(255, 255, 255, 0) 63%);
+  opacity: 0.7;
+}
+
+.care-progress-illustration::after {
+  background: radial-gradient(ellipse at center, rgba(45, 106, 68, 0.085) 0%, rgba(90, 145, 103, 0.036) 50%, transparent 76%);
+  bottom: 8px;
+  height: 22px;
+  opacity: 0.7;
+}
+
+@media (min-width: 1121px) {
+  .care-progress-card {
+    grid-template-columns: minmax(250px, 42%) minmax(300px, 1fr);
+    min-height: 292px;
+    padding: 36px 32px 34px 30px;
+  }
+
+  .care-progress-visual {
+    max-width: 410px;
+    transform: translate(22px, -16px);
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 124%;
+    width: 124%;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    transform: translateX(-12px);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1120px) {
+  .care-progress-card {
+    grid-template-columns: minmax(260px, 44%) minmax(270px, 1fr);
+    padding: 32px 30px;
+  }
+
+  .care-progress-visual {
+    max-width: 365px;
+    transform: translate(12px, -8px);
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 114%;
+    width: 114%;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    transform: translateX(-6px);
+  }
+}
+
+@media (max-width: 768px) {
+  .care-progress-card {
+    gap: 13px;
+    padding: 24px 22px;
+  }
+
+  .care-progress-content,
+  .care-progress-card .flower-progress-meter,
+  .care-progress-card .flower-progress-status {
+    transform: none;
+  }
+
+  .care-progress-visual {
+    max-width: 270px;
+    transform: translateY(-4px);
+  }
+
+  .care-progress-plant,
+  .care-progress-image,
+  .flower-stage-complete .care-progress-plant,
+  .flower-stage-complete .care-progress-image {
+    height: 108%;
+    width: 108%;
+  }
+
+  .flower-progress-value {
+    font-size: 1.58rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .patient-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    isolation: isolate;
+  }
+
+  .dashboard-header,
+  .dashboard-row,
+  .dashboard-section,
+  .patient-profile-card,
+  .patient-profile-grid,
+  .forms-grid,
+  .activity-list,
+  .patient-consultation-list {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .dashboard-section,
+  .patient-profile-card,
+  .patient-profile-item,
+  .form-card,
+  .activity-item,
+  .patient-consultation-card,
+  .care-progress-card,
+  .flower-progress-card {
+    transform: none;
+  }
+
+  .patient-profile-card,
+  .form-card,
+  .activity-item,
+  .patient-consultation-card {
+    align-items: start;
+  }
+}
+
+/* Keep patient pages visible when the side navigation switches to the bottom bar. */
+@media (max-width: 1199px) {
+  .patient-hub {
+    height: 100dvh;
+    min-height: 100dvh;
+    overflow: hidden;
+  }
+
+  .patient-hub .main-content {
+    flex: 1 1 auto;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .patient-hub .top-nav {
+    flex: 0 0 auto;
+  }
+
+  .patient-hub .content-area {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+
+  .patient-hub .patient-dashboard,
+  .patient-hub .dashboard-section,
+  .patient-hub .patient-profile-card,
+  .patient-hub .patient-profile-grid,
+  .patient-hub .patient-profile-item {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-hub .main-content {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .patient-hub .content-area {
+    display: block;
+    padding: 16px 14px calc(84px + env(safe-area-inset-bottom));
+  }
+}
+
+/* Phone/tablet fallback: avoid nested fixed-height containers hiding content. */
+@media (max-width: 767px) {
+  html,
+  body,
+  #root {
+    height: auto;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .patient-hub {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+    padding-bottom: calc(68px + env(safe-area-inset-bottom));
+  }
+
+  .patient-hub .main-content {
+    display: block;
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .patient-hub .top-nav {
+    position: relative;
+    z-index: 2;
+  }
+
+  .patient-hub .content-area {
+    display: block;
+    height: auto;
+    min-height: calc(100vh - 136px);
+    overflow: visible;
+    padding: 16px 14px 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .patient-hub .patient-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    max-width: none;
+    min-height: 0;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .patient-hub .dashboard-section,
+  .patient-hub .patient-profile-card,
+  .patient-hub .patient-profile-grid,
+  .patient-hub .patient-profile-item {
+    background-color: #ffffff;
+    color: #0f3f2d;
+    display: grid;
+    opacity: 1;
+    position: relative;
+    transform: none;
+    visibility: visible;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .patient-hub .dashboard-section h2,
+  .patient-hub .patient-profile-hero h3,
+  .patient-hub .patient-profile-hero p,
+  .patient-hub .patient-profile-item span,
+  .patient-hub .patient-profile-item strong,
+  .patient-hub .empty-state {
+    color: inherit;
+    opacity: 1;
+    visibility: visible;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  .patient-hub .dashboard-section h2 {
+    color: #16463a;
+  }
+
+  .patient-hub .patient-profile-hero p,
+  .patient-hub .patient-profile-item span {
+    color: #047857;
+  }
+
+  .patient-hub .patient-navigation {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: auto;
+    z-index: 50;
+  }
+}
+
+/* Tablet and narrow desktop navigation: keep the panel horizontal and compact. */
+@media (max-width: 1280px) {
+  .patient-hub {
+    display: block;
+    min-height: 100vh;
+    padding-bottom: calc(82px + env(safe-area-inset-bottom));
+  }
+
+  .patient-hub .main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+  }
+
+  .patient-hub .content-area {
+    padding-bottom: calc(104px + env(safe-area-inset-bottom));
+  }
+
+  .patient-hub .patient-navigation {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
+    border-radius: 0;
+    border-right: none;
+    border-top: 1px solid rgba(16, 185, 129, 0.14);
+    bottom: 0;
+    box-shadow: 0 -8px 24px rgba(34, 81, 64, 0.1);
+    flex-direction: row;
+    gap: 0;
+    height: min(76px, calc(100px - env(safe-area-inset-bottom)));
+    left: 0;
+    max-height: 100px;
+    min-height: 0;
+    padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+    position: fixed;
+    right: 0;
+    top: auto;
+    width: 100%;
+    z-index: 50;
+  }
+
+  .patient-hub .patient-navigation-brand {
+    display: none;
+  }
+
+  .patient-hub .patient-navigation-list {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 560px;
+    width: 100%;
+  }
+
+  .patient-hub .patient-navigation-item {
+    align-items: center;
+    border-radius: 18px;
+    box-shadow: none;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: 4px;
+    height: 54px;
+    justify-content: center;
+    max-width: 150px;
+    padding: 7px 10px;
+    width: auto;
+  }
+
+  .patient-hub .patient-navigation-item:focus,
+  .patient-hub .patient-navigation-item:active {
+    background: rgba(15, 23, 42, 0.055);
+    border-color: rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    outline: none;
+  }
+
+  .patient-hub .patient-navigation-item:hover,
+  .patient-hub .patient-navigation-item.active {
+    background: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.18);
+    border-radius: 18px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  }
+
+  .patient-hub .patient-navigation-item.active {
+    color: #047857;
+  }
+
+  .patient-hub .patient-navigation-item span {
+    display: block;
+    font-size: 0.72rem;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .patient-hub .patient-nav-icon {
+    height: 19px;
+    width: 19px;
+  }
+}
+
+/* Standalone centered care progress panel. */
+.patient-hub .flower-progress-shell {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 28px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.patient-hub .flower-progress-shell .flower-progress-card,
+.patient-hub .flower-progress-shell .care-progress-card {
+  justify-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: min(760px, 100%);
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .patient-hub .flower-progress-shell {
+    margin-bottom: 20px;
+  }
+
+  .patient-hub .flower-progress-shell .flower-progress-card,
+  .patient-hub .flower-progress-shell .care-progress-card {
+    max-width: 100%;
+  }
+}
+
+.patient-disconnect-btn {
+  align-items: center;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid rgba(15, 78, 59, 0.14);
+  border-radius: 12px;
+  color: #0f4f38;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 680;
+  justify-content: center;
+  margin-top: 16px;
+  min-height: 42px;
+  padding: 0 16px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.patient-profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin: -18px auto 34px;
+  max-width: none;
+  width: 100%;
+}
+
+.patient-profile-actions .patient-disconnect-btn {
+  width: 100%;
+}
+
+.patient-disconnect-btn:hover,
+.patient-disconnect-btn:focus-visible {
+  border-color: rgba(15, 78, 59, 0.24);
+  box-shadow: 0 8px 18px rgba(34, 81, 64, 0.08);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* Final patient header layout: one row, title left, notifications right. */
+.patient-hub .top-nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  min-height: 50px;
+  overflow: visible;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 60;
+}
+
+.patient-hub .nav-title {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  gap: 12px;
+  min-width: 0;
+  width: auto;
+}
+
+.patient-hub .top-nav-logo {
+  flex: 0 0 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.patient-hub .nav-title h1 {
+  display: block;
+  flex: 0 0 auto;
+  font-size: 1rem;
+  min-width: max-content;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.patient-hub .bell-icon {
+  font-size: 1.15rem;
+  height: 34px;
+  width: 34px;
+}
+
+.patient-hub .page-back-button {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(15, 118, 110, 0.14);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px rgba(34, 81, 64, 0.08);
+  color: #0f766e;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 1rem;
+  font-weight: 800;
+  height: 36px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 0 12px;
+  padding: 0;
+  width: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+.patient-hub .page-back-button:hover,
+.patient-hub .page-back-button:focus-visible {
+  background: #f0fdf4;
+  outline: none;
+}
+
+.consultations-empty-background {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 180px);
+  width: 100%;
+}
+
+.consultations-empty-panel {
+  align-items: center;
+  color: #0f4f38;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  margin: 0 auto;
+  min-height: 96px;
+  padding: 24px clamp(18px, 4vw, 36px);
+  text-align: center;
+  width: min(720px, 100%);
+}
+
+.consultations-list-screen {
+  width: 100%;
+}
+
+.consultation-weather-banner {
+  align-items: stretch;
+  background:
+    linear-gradient(135deg, rgba(236, 253, 245, 0.96), rgba(240, 253, 250, 0.88)),
+    #fff;
+  border: 1px solid rgba(20, 83, 45, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  padding: 20px 22px;
+}
+
+.consultation-weather-banner__copy h3 {
+  color: #10342c;
+  font-size: 1.35rem;
+  margin: 8px 0 6px;
+}
+
+.consultation-weather-banner__copy p,
+.consultation-weather-banner__weather p {
+  color: #58706a;
+  margin: 0;
+}
+
+.consultation-weather-banner__weather {
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(34, 197, 94, 0.14);
+  border-radius: 18px;
+  min-width: 240px;
+  max-width: 360px;
+  padding: 16px 18px;
+}
+
+.consultation-weather-banner__weather strong {
+  color: #0f172a;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.consultation-weather-state--error {
+  color: #b91c1c;
+}
+
+.consultation-detail-screen {
+  display: grid;
+  gap: 20px;
+}
+
+.consultation-detail-screen-header {
+  display: grid;
+  gap: 8px;
+}
+
+.consultation-detail-screen-header h2 {
+  border: 0;
+  color: #16463a;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  margin: 0;
+  padding: 0;
+}
+
+.consultation-detail-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.consultation-detail-item,
+.consultation-notes-block,
+.consultation-recording-block {
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid rgba(16, 185, 129, 0.08);
+  border-radius: 14px;
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+}
+
+.consultation-detail-item span,
+.consultation-notes-block span,
+.consultation-recording-block span {
+  color: #047857;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.consultation-detail-item strong,
+.consultation-notes-block p,
+.consultation-recording-block p {
+  color: #0f3f2d;
+  font-weight: 650;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.patient-hub .nav-actions {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.patient-hub .notifications-panel {
+  box-sizing: border-box;
+  padding: 10px;
+  right: 0;
+}
+
+@media (max-width: 767px) {
+  .patient-hub .notifications-panel {
+    left: auto;
+    max-width: calc(100vw - 28px);
+    right: -10px;
+    width: min(350px, calc(100vw - 28px));
+  }
+}
+
+/* Symptom submission flow polish */
+.patient-dashboard .forms-grid .form-card {
+  overflow: hidden;
+  padding: 0 20px 20px;
+}
+
+.patient-dashboard .forms-grid .form-card-header {
+  align-items: center;
+  background: linear-gradient(180deg, #ecfdf5 0%, #dcfce7 100%);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.14);
+  border-radius: 0;
+  box-sizing: border-box;
+  margin: 0 0 14px -20px;
+  padding: 14px 20px;
+  width: calc(100% + 40px);
+}
+
+.patient-dashboard .forms-grid .form-card h3 {
+  margin: 0;
+}
+
+.patient-form-container {
+  background: linear-gradient(135deg, #f7fef9 0%, #eff9f3 100%);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 10px 26px rgba(34, 81, 64, 0.06);
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 22px;
+}
+
+.patient-form-container .form-stepper {
+  margin-top: 0;
+}
+
+/* Full-screen symptom form flow */
+.patient-hub.form-flow-active .patient-navigation {
+  visibility: hidden;
+}
+
+.patient-hub.form-flow-active .top-nav {
+  visibility: hidden;
+}
+
+.patient-hub.form-flow-active .content-area {
+  overflow: hidden;
+  padding: 0;
+}
+
+.patient-form-overlay-screen {
+  animation: patientFormOverlayIn 180ms ease-out;
+  background: linear-gradient(135deg, #f6fdf8 0%, #ebf8f0 100%);
+  inset: 0;
+  position: fixed;
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-form-top-nav {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(16, 185, 129, 0.14);
+  box-shadow: 0 6px 20px rgba(34, 81, 64, 0.05);
+  display: flex;
+  min-height: 58px;
+  padding: 10px 14px;
+}
+
+.patient-form-top-nav .nav-title {
+  width: 100%;
+}
+
+.patient-form-top-nav .top-nav-back {
+  height: 30px;
+  width: 34px;
+}
+
+.patient-form-top-nav h1 {
+  color: #16463a;
+  font-size: 1rem;
+  font-weight: 650;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.patient-form-overlay-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px;
+}
+
+.patient-form-overlay-content .patient-form-container {
+  margin: 0 auto;
+}
+
+@keyframes patientFormOverlayIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 767px) {
+  .patient-form-top-nav {
+    min-height: 54px;
+    padding: 8px 12px;
+  }
+
+  .patient-form-overlay-content {
+    padding: 10px;
+  }
+}
+
+/* Per-view scroll isolation (authoritative final layout) */
+.patient-hub {
+  height: 100dvh;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+
+.patient-hub .main-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.patient-hub .content-area {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.patient-hub .tab-scroll-viewport {
+  -webkit-overflow-scrolling: touch;
+  flex: 1 1 auto;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 34px;
+}
+
+@media (max-width: 1199px) {
+  .patient-hub .tab-scroll-viewport {
+    padding: 28px;
+    padding-bottom: calc(104px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 767px) {
+  .patient-hub .tab-scroll-viewport {
+    padding: 20px;
+    padding-bottom: calc(84px + env(safe-area-inset-bottom));
+  }
+}
+
+.profile-menu-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.profile-menu-item {
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 253, 251, 0.96));
+  border: 1px solid rgba(42, 119, 93, 0.12);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 8px 20px rgba(31, 71, 59, 0.05);
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  gap: 6px;
+  padding: 14px 16px;
+  text-align: left;
+  width: 100%;
+}
+
+.profile-menu-item strong {
+  color: #16463a;
+  font-size: 0.98rem;
+}
+
+.profile-menu-item span {
+  color: #5f7d70;
+  font-size: 0.86rem;
+}
+
+.profile-menu-item:hover,
+.profile-menu-item:focus-visible {
+  border-color: rgba(42, 119, 93, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 12px 24px rgba(31, 71, 59, 0.07);
+  outline: none;
+}
+
+.profile-history-page {
+  display: grid;
+  gap: 14px;
+}
+
+.profile-history-fixed-header {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(42, 119, 93, 0.12);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 10px 20px rgba(31, 71, 59, 0.06);
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.profile-history-fixed-header .page-back-button {
+  margin: 0;
+}
+
+.profile-history-fixed-header h2 {
+  border: 0;
+  color: #16463a;
+  font-size: 1.02rem;
+  margin: 0;
+  padding: 0;
+}
+
+.profile-history-list {
+  display: grid;
+  gap: 12px;
+}
+
+.consultation-detail-page {
+  display: grid;
+  gap: 14px;
+}
+
+.consultation-detail-fixed-header {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(42, 119, 93, 0.12);
+  border-radius: 16px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    0 10px 20px rgba(31, 71, 59, 0.06);
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.consultation-detail-fixed-header .page-back-button {
+  margin: 0;
+}
+
+.consultation-detail-fixed-header h2 {
+  border: 0;
+  color: #16463a;
+  font-size: 1.02rem;
+  margin: 0;
+  padding: 0;
+}
+
+.consultation-detail-content {
+  display: grid;
+  gap: 14px;
+}
+
+@media (max-width: 860px) {
+  .consultation-weather-banner {
+    flex-direction: column;
+  }
+
+  .consultation-weather-banner__weather {
+    max-width: none;
+  }
+}
+
+.consultation-title-block {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 185, 129, 0.08);
+  border-radius: 14px;
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+}
+
+.consultation-title-block h3 {
+  color: #16463a;
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  margin: 0;
+}
+
+/* Ensure consultation list titles align flush with card content on all breakpoints. */
+.patient-dashboard .patient-consultation-card {
+  align-items: stretch;
+  display: grid;
+  gap: 10px;
+  text-align: left;
+}
+
+.patient-dashboard .patient-consultation-card > div {
+  justify-items: start;
+  margin: 0;
+  padding: 0;
+}
+
+.patient-dashboard .patient-consultation-card > .consultation-card-weather {
+  border-top: 1px solid rgba(16, 185, 129, 0.12);
+  grid-column: 1 / -1;
+  margin-top: 4px;
+  min-width: 0;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.consultation-card-weather {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  width: 100%;
+}
+
+.consultation-card-weather__top {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  min-width: 0;
+}
+
+.consultation-card-weather__icon {
+  align-items: center;
+  background: rgba(16, 185, 129, 0.08);
+  border-radius: 999px;
+  display: inline-flex;
+  flex: 0 0 30px;
+  font-size: 1rem;
+  height: 30px;
+  justify-content: center;
+  width: 30px;
+}
+
+.consultation-card-weather__summary {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.consultation-card-weather__summary strong,
+.consultation-card-weather__summary span,
+.consultation-card-weather__details,
+.consultation-card-weather__recommendation {
+  color: #4b6b61;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.consultation-card-weather__summary strong {
+  color: #0f3f2d;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.consultation-card-weather__summary span,
+.consultation-card-weather__details,
+.consultation-card-weather__recommendation {
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+.consultation-card-weather__details {
+  color: #0f3f2d;
+  font-weight: 700;
+}
+
+.consultation-card-weather__recommendation {
+  color: #58706a;
+  overflow-wrap: anywhere;
+}
+
+.patient-dashboard .patient-consultation-card h3 {
+  margin: 0;
+  padding-inline-start: 0;
+  text-indent: 0;
+}

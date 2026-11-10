@@ -1,0 +1,19 @@
+/* Healthcare Role Selector Styles */
+
+.role-button {
+  transition: all 0.3s ease;
+}
+
+.role-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.role-icon {
+  font-size: 3rem;
+  transition: transform 0.3s ease;
+}
+
+.role-button:hover .role-icon {
+  transform: scale(1.2);
+}

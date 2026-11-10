@@ -1,0 +1,590 @@
+.ch-root {
+  padding: 0.25rem 0;
+}
+
+.ch-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.ch-header h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #173540;
+}
+
+.ch-count {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #78909a;
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+/* ── Empty state ─────────────────────────────────────────── */
+.ch-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3.5rem 1rem;
+  color: #78909a;
+}
+
+.ch-empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.ch-empty h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #31515d;
+}
+
+.ch-empty p {
+  font-size: 0.88rem;
+  color: #78909a;
+  max-width: 340px;
+  line-height: 1.5;
+}
+
+/* ── Card list ───────────────────────────────────────────── */
+.ch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ch-card {
+  border: 1px solid rgba(129, 151, 161, 0.14);
+  border-radius: 14px;
+  background: #fff;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.ch-card:hover {
+  border-color: rgba(15, 118, 110, 0.2);
+  box-shadow: 0 4px 14px rgba(31, 54, 64, 0.06);
+}
+
+.ch-card--open {
+  border-color: rgba(15, 118, 110, 0.28);
+  box-shadow: 0 6px 18px rgba(31, 54, 64, 0.07);
+}
+
+/* ── Card header row ─────────────────────────────────────── */
+.ch-card-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  gap: 0.75rem;
+}
+
+.ch-card-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ch-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #dff5f2;
+  color: #0f766e;
+  font-size: 0.95rem;
+  font-weight: 750;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.ch-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.ch-patient {
+  font-size: 0.92rem;
+  color: #173540;
+  font-weight: 700;
+}
+
+.ch-date {
+  font-size: 0.75rem;
+  color: #78909a;
+}
+
+.ch-card-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.ch-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 999px;
+  padding: 0.18rem 0.55rem;
+  white-space: nowrap;
+}
+
+.ch-pill--tags {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ch-chevron {
+  font-size: 0.62rem;
+  color: #94a3b8;
+  margin-left: 0.15rem;
+}
+
+/* ── Expanded details ────────────────────────────────────── */
+.ch-details {
+  border-top: 1px solid rgba(129, 151, 161, 0.1);
+  padding: 0.9rem 1rem 1rem;
+  background: #f8fbfb;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ch-detail-row {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.83rem;
+}
+
+.ch-detail-label {
+  color: #78909a;
+  font-weight: 600;
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.ch-detail-value {
+  color: #263f49;
+}
+
+/* ── Tagged moments ──────────────────────────────────────── */
+.ch-tags-section {
+  margin-top: 0.5rem;
+}
+
+.ch-tags-section h4 {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #78909a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem;
+}
+
+.ch-tags-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ch-tag-item {
+  display: grid;
+  grid-template-columns: 38px 58px 1fr;
+  gap: 0.45rem;
+  align-items: center;
+  background: #fffbeb;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+}
+
+.ch-tag-ts {
+  font-size: 0.68rem;
+  color: #92400e;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.ch-tag-speaker {
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.ch-tag-speaker--doctor {
+  color: #1d4ed8;
+}
+
+.ch-tag-speaker--patient {
+  color: #0f766e;
+}
+
+.ch-tag-text {
+  font-size: 0.82rem;
+  color: #263f49;
+  line-height: 1.35;
+}
+
+/* ── Meta row ────────────────────────────────────────────── */
+.ch-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: #617783;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(129, 151, 161, 0.1);
+}
+
+.ch-meta-label {
+  font-weight: 700;
+  color: #31515d;
+  margin-right: 0.3rem;
+}
+
+/* ── Summary stats row ───────────────────────────────────── */
+.ch-summary-stats {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.ch-stat {
+  flex: 1;
+  min-width: 70px;
+  background: #fff;
+  border: 1px solid rgba(129, 151, 161, 0.14);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.ch-stat-val {
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: #0f766e;
+}
+
+.ch-stat-label {
+  font-size: 0.68rem;
+  color: #78909a;
+  text-align: center;
+}
+
+/* ── Section wrapper ─────────────────────────────────────── */
+.ch-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ch-section h4 {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #78909a;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* ── Symptoms grid ───────────────────────────────────────── */
+.ch-symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.45rem;
+}
+
+.ch-symptom-card {
+  background: #fff;
+  border: 1px solid rgba(129, 151, 161, 0.14);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+}
+
+.ch-symptom-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.ch-symptom-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #173540;
+}
+
+.ch-symptom-code {
+  font-size: 0.66rem;
+  background: #eef7f7;
+  color: #0f766e;
+  border-radius: 999px;
+  padding: 0.1rem 0.4rem;
+  white-space: nowrap;
+}
+
+.ch-symptom-sev {
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: #fef2f2;
+  color: #991b1b;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+}
+
+/* ── Insights ────────────────────────────────────────────── */
+.ch-insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ch-insight-card {
+  background: #fff;
+  border: 1px solid rgba(129, 151, 161, 0.14);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+}
+
+.ch-insight-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.ch-insight-entity {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #173540;
+}
+
+.ch-insight-conf {
+  font-size: 0.78rem;
+  font-weight: 750;
+  color: #0f766e;
+}
+
+.ch-conf-bar {
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.ch-conf-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0f766e, #14b8a6);
+}
+
+.ch-insight-note {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  color: #617783;
+  line-height: 1.4;
+}
+
+.ch-disease-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.ch-disease-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+}
+
+/* ── Suggestions ─────────────────────────────────────────── */
+.ch-suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.ch-suggestion-item {
+  background: #fff;
+  border: 1px solid rgba(129, 151, 161, 0.14);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+}
+
+.ch-suggestion-item strong {
+  display: block;
+  font-size: 0.82rem;
+  color: #173540;
+  margin-bottom: 0.2rem;
+}
+
+.ch-suggestion-item p {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #617783;
+  line-height: 1.4;
+}
+
+/* ── Doctor Notes ────────────────────────────────────────── */
+.ch-notes-section {
+  background: #fff;
+  border: 1px solid rgba(15, 118, 110, 0.14);
+  border-radius: 10px;
+  padding: 0.75rem 0.85rem;
+}
+
+.ch-notes-section h4 {
+  color: #0f766e !important;
+}
+
+.ch-notes-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ch-notes-text {
+  margin: 0;
+  font-size: 0.83rem;
+  color: #263f49;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.ch-notes-edit-btn,
+.ch-notes-add-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid rgba(15, 118, 110, 0.3);
+  border-radius: 7px;
+  color: #0f766e;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 650;
+  padding: 0.28rem 0.65rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ch-notes-edit-btn:hover,
+.ch-notes-add-btn:hover {
+  background: #f0fdfa;
+  border-color: rgba(15, 118, 110, 0.5);
+}
+
+.ch-notes-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.ch-notes-textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 118, 110, 0.25);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.83rem;
+  color: #173540;
+  line-height: 1.5;
+  resize: vertical;
+  background: #f8fbfb;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.ch-notes-textarea:focus {
+  border-color: #0f766e;
+  background: #fff;
+}
+
+.ch-notes-edit-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.ch-notes-count {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-right: auto;
+}
+
+.ch-notes-cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(129, 151, 161, 0.3);
+  border-radius: 7px;
+  color: #617783;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 650;
+  padding: 0.28rem 0.65rem;
+  transition: background 0.15s;
+}
+
+.ch-notes-cancel-btn:hover {
+  background: #f1f5f9;
+}
+
+.ch-notes-save-btn {
+  background: #0f766e;
+  border: none;
+  border-radius: 7px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.28rem 0.75rem;
+  transition: background 0.15s;
+}
+
+.ch-notes-save-btn:hover:not(:disabled) {
+  background: #0d6b64;
+}
+
+.ch-notes-save-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ── Delete button ───────────────────────────────────────── */
+.ch-delete-btn {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  border-radius: 8px;
+  color: #dc2626;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 650;
+  padding: 0.35rem 0.75rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.ch-delete-btn:hover {
+  background: #fef2f2;
+  border-color: rgba(220, 38, 38, 0.45);
+}

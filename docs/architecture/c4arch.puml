@@ -1,0 +1,24 @@
+@startuml
+!include <C4/C4_Container>
+
+title Container Diagram for DDSS Service
+
+Person(patient, "Patient", "Uses the Web App to submit history")
+Person(clinician, "Clinician", "Views live UI and feedback")
+
+System_Boundary(c1, "DDSS System") {
+    Container(patient_app, "Patient Web App", "React/JSON", "Pre-Consultation Form")
+    Container(doc_dashboard, "Clinician Dashboard", "React/WebSockets", "Live UI & Feedback")
+    Container(api, "FastAPI Server", "Python/FastAPI", "Handles state, routing, and validation")
+    
+    ContainerDb(doc_db, "Document Store", "JSON/NoSQL", "Stores session context and history")
+    ContainerDb(neo4j, "Knowledge Graph", "Neo4j/SNOMED", "Semantic matching and diagnostic logic")
+}
+
+Rel(patient, patient_app, "Submits history")
+Rel(patient_app, api, "1. Submit Subjective History", "JSON/HTTPS")
+Rel(api, doc_db, "2. Store Session Context")
+Rel(doc_dashboard, api, "3. Stream Live Audio", "WebSockets")
+Rel(api, neo4j, "8. Semantic Node Matching")
+
+@enduml

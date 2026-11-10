@@ -1,0 +1,46 @@
+@startuml
+skinparam dpi 180
+!NEW_C4_STYLE=1
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+
+AddRelTag("async", $lineStyle=DashedLine())
+AddRelTag("streaming", $lineStyle=DottedLine(), $lineColor="#22c55e")
+
+title Deployment Diagram: Local Clinician Workstation (Edge Deployment)
+
+Deployment_Node(workstation, "Clinician Workstation", "Windows/macOS/Linux", "The Doctor's PC") {
+    
+    Deployment_Node(browser, "Web Browser", "Chrome/Edge", "Frontend Runtime") {
+        Container(react_app, "React Dashboards", "JavaScript", "Intake UI & Clinician Dashboard")
+    }
+
+    Deployment_Node(backend_env, "Local Backend Runtime", "Python 3.10+", "Main Application logic") {
+        Container(api_service, "FastAPI Service", "Python", "Orchestrator & Business Logic") [cite: 1, 6]
+        
+        Deployment_Node(binaries, "Native Executables", "C++", "Performance-critical binaries") {
+            Container(whisper_bin, "whisper.cpp", "Binary", "Local Speech-to-Text Engine") 
+        }
+
+        Deployment_Node(storage, "Local Storage", "File System", "Embedded Database Files") {
+            ContainerDb(kuzu_files, "KuzuDB Files", "Directory", "Graph Data (Reasoning)")
+            ContainerDb(sqlite_file, "SQLite File", ".db file", "Session Metadata")
+        }
+    }
+}
+
+Deployment_Node(hospital_net, "Hospital Network", "Intranet") {
+    System_Ext(ehr, "Hospital EHR", "SMART on FHIR Server") 
+}
+
+Deployment_Node(internet, "Public Internet", "Cloud") {
+    System_Ext(weather, "Open-Meteo API", "Weather/Pollen Data") [cite: 4, 8]
+    System_Ext(uni_ai, "University AI Cluster", "Hactar (Llama-3/Mistral)") [cite: 5]
+}
+
+Rel(react_app, api_service, "API Calls / WebSockets", "localhost:8000", $tags="streaming")
+Rel(api_service, whisper_bin, "Pipes audio via stdin", "Subprocess")
+Rel(api_service, ehr, "HTTPS/FHIR", "Remote Call", $tags="async")
+Rel(api_service, weather, "HTTPS", "Remote Call", $tags="async")
+Rel(api_service, uni_ai, "HTTPS", "Remote Call", $tags="async")
+
+@enduml

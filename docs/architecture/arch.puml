@@ -1,0 +1,50 @@
+@startuml
+!define RECTANGLE component
+
+' Professional clean styling
+skinparam componentStyle uml2
+skinparam monochrome true
+skinparam shadowing false
+skinparam defaultFontName Arial
+
+title Integrated DDSS Service Architecture
+
+package "Client Layer (Frontend)" {
+    [Patient Web App\n(Pre-Consultation Form)] as PatientApp
+    [Clinician Dashboard\n(Live UI & Feedback)] as DocDashboard
+}
+
+package "API" {
+    [FastAPI Server\n(State, Routing & Validation)] as FastAPI
+}
+
+package "Inference & Extraction Layer" {
+    [LLM text filtering] as llm
+    [whisper.cpp Inference\n(Local STT Audio Engine)] as Whisper
+    [Medical NER Pipeline\n(SciSpacy / Entity Linker)] as SciSpacy
+}
+
+package "Data & Reasoning Layer" {
+    database "Document Store\n(JSON Patient History)" as DocDB
+    database "Knowledge Graph\n(Neo4j - SNOMED Subset)" as Neo4j
+}
+
+' Pre-Consultation Flow (Batch)
+PatientApp --> FastAPI : "1. Submit Subjective\nHistory (JSON)"
+FastAPI --> DocDB : "2. Store Session\nContext"
+
+' Live Consultation Flow (Stream)
+DocDashboard --> Whisper : "3. Stream Live\nAudio Slices"
+Whisper --> FastAPI : "4. Transcribed\nText Chunks"
+
+' Data Fusion & Logic
+FastAPI <--> DocDB : "5. Fetch Patient\nHistory Context"
+FastAPI --> llm : "6. LLM text filtering"
+FastAPI --> SciSpacy : "7. Text to Clinical\nEntities"
+SciSpacy --> Neo4j : "8. Semantic Node\nMatching (Concept IDs)"
+
+' Retrieval & Presentation
+Neo4j --> FastAPI : "9. Graph Traversal Path\n(Diagnostic Logic)"
+FastAPI --> DocDashboard : "10. Push Evidence &\nSuggested Diagnosis"
+
+@enduml

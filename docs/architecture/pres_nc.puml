@@ -1,0 +1,56 @@
+@startuml
+!NEW_C4_STYLE=1
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+AddRelTag("streaming", $lineStyle=DottedLine(), $textColor="#22c55e", $lineColor="#22c55e")
+AddRelTag("async", $lineStyle=DashedLine(), $textColor="#335DA5")
+
+title Core Runtime Architecture: Integrated DDSS
+
+Person(patient, "Patient")
+Person(clinician, "Clinician")
+
+System_Boundary(ddss, "DDSS Boundary") {
+    Container(intake_app, "Intake Web App", "Frontend", "Captures subjective data")
+    Container(dashboard, "Clinician Dashboard", "Frontend", "Live consultation UI")
+    
+    Container(api, "FastAPI Orchestrator", "Backend", "Manages state and data pipelines")
+    
+    Container(audio_engine, "Whisper Engine", "C++", "Zero-latency transcription")
+    Container(nlp_engine, "SciSpacy NER", "Python", "Deterministic entity extraction")
+    Container(llm, "LLM Classifier", "AI", "Semantic context attribution")
+    
+    ContainerDb(graph_db, "Knowledge Graph", "Neo4j", "Medical reasoning paths")
+    ContainerDb(doc_db, "Session Store", "Supabase", "Temporary session state")
+}
+
+System_Ext(ehr_system, "Hospital EHR", "SMART on FHIR")
+System_Ext(weather_api, "Open-Meteo API", "Environmental Data")
+
+' --- The Visual Flow ---
+
+' 1. Intake
+Rel(patient, intake_app, "Submits history")
+Rel(intake_app, api, "Transmits data")
+
+' 2. Enrichment
+Rel(api, ehr_system, "Fetches clinical baseline", $tags="async")
+Rel(api, weather_api, "Fetches environment", $tags="async")
+
+' 3. Live Session
+Rel(dashboard, api, "Streams live audio", $tags="streaming")
+Rel_Neighbor(api, audio_engine, "Pipes binary audio")
+Rel_Neighbor(audio_engine, api, "Returns raw text")
+
+' 4. Processing Pipeline
+Rel(api, nlp_engine, "Extracts SNOMED entities")
+Rel(api, llm, "Evaluates actor attribution")
+
+' 5. Reasoning & Output
+Rel(api, graph_db, "Queries diagnostic paths")
+Rel(api, doc_db, "Persists state")
+Rel(api, dashboard, "Pushes live insights", $tags="streaming")
+Rel(clinician, dashboard, "Reviews suggestions")
+
+HIDE_STEREOTYPE()
+@enduml

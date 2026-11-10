@@ -1,0 +1,38 @@
+@startuml
+!include <C4/C4_Container>
+
+title Container Diagram: Integrated DDSS
+
+Person(patient, "Patient", "Uses Pre-Consultation Form")
+Person(clinician, "Clinician", "Uses Live UI & Dashboard")
+
+System_Boundary(c1, "Integrated DDSS") {
+    Container(patient_app, "Patient Web App", "React/JSON", "Form for subjective history")
+    Container(doc_dashboard, "Clinician Dashboard", "React", "Visualizes live transcription")
+    
+    Container(api, "FastAPI Server", "Python/FastAPI", "Primary orchestrator")
+    
+    Container(whisper, "Whisper.cpp Engine", "C++/Local", "Local Speech-to-Text inference")
+    Container(scispacy, "Medical NER Pipeline", "SciSpacy", "Extracts clinical entities")
+    Container(llm_filter, "LLM Text Filter", "LLM", "Cleans transcribed text")
+
+    ContainerDb(doc_db, "Document Store", "JSON/NoSQL", "Stores session context")
+    ContainerDb(neo4j, "Knowledge Graph", "Neo4j/SNOMED", "Semantic matching")
+}
+
+Rel(patient, patient_app, "Submits history")
+Rel(patient_app, api, "1. Submit history", "JSON/HTTPS")
+Rel(api, doc_db, "2. Store Session Context")
+
+Rel(clinician, doc_dashboard, "Conducts consultation")
+Rel(doc_dashboard, api, "3. Stream Audio Slices", "WebSockets/HTTP")
+Rel(api, whisper, "4. Forward Audio")
+Rel(whisper, api, "5. Transcribed Text")
+
+Rel(api, llm_filter, "6. Clean text")
+Rel(api, scispacy, "7. Extract Entities")
+Rel(api, neo4j, "8. Graph Traversal", "Cypher Query")
+Rel(neo4j, api, "9. Return Path")
+Rel(api, doc_dashboard, "10. Push Suggested Diagnosis", "WebSockets")
+
+@enduml

@@ -1,0 +1,55 @@
+@startuml
+skinparam dpi 180
+!NEW_C4_STYLE=1
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+AddElementTag("backendContainer", $shape=EightSidedShape())
+AddRelTag("async", $lineStyle=DashedLine())
+AddRelTag("streaming", $lineStyle=DottedLine(), $lineColor="#22c55e")
+
+title Container Diagram for Diagnostic Decision Support System
+
+Person(patient, "Patient", "Provides history via pre-consultation form")
+Person(clinician, "Clinician", "Uses the dashboard during consultation")
+
+System_Boundary(c1, "Diagnostic Decision Support") {
+    Container(intake_app, "Patient Intake Web App", "React/TypeScript", "Captures subjective data")
+    Container(dashboard, "Clinician Dashboard", "React/TypeScript", "Visualizes real-time audio transcriptions and Neo4j reasoning paths")
+    
+    Container(backend_api, "API Application", "Python, FastAPI", "Manages async event loop, subprocesses, and network I/O", $tags="backendContainer")
+
+    Container(audio_engine, "Whisper Engine", "C++, whisper.cpp", "Performs loca audio transcription")
+    Container(nlp_engine, "SciSpacy NER Engine", "Python", "Deterministically extracts SNOMED CT entities (CPU-bound)")
+    
+    ContainerDb(graph_db, "Knowledge Graph", "Neo4j", "Stores deterministic medical relationships for reasoning")
+    ContainerDb(doc_db, "Session Store", "Supabase / PostgreSQL JSONB", "Stores temporary patient session data and environmental metadata")
+}
+
+System_Ext(llm, "University Hactar cluster", "Local Ollama model/university llm", "Evaluates entity attribution and clinical context asynchronously")
+System_Ext(ehr_system, "Hospital EHR", "Stores clinical data; accessed via SMART on FHIR")
+System_Ext(weather_api, "Open-Meteo API", "Provides live environmental context (AQI, Pollen)")
+
+Rel(clinician, dashboard, "Customizes intake forms", "HTTPS/Sync")
+Rel(dashboard, backend_api, "Saves custom question templates", "JSON/HTTPS")
+
+Rel(patient, intake_app, "Provides history", "HTTPS/Sync")
+Rel(intake_app, backend_api, "Transmits patient history data", "JSON/HTTPS")
+Rel(backend_api, ehr_system, "Fetches patient context", "httpx", $tags="async")
+Rel(backend_api, weather_api, "Enriches with metadata", "httpx", $tags="async")
+
+Rel(dashboard, backend_api, "Streams audio", "WebSockets", $tags="streaming")
+Rel_Neighbor(backend_api, audio_engine, "Sends raw audio chunks", "FFmpeg Pipe", $tags="streaming")
+Rel_Neighbor(audio_engine, backend_api, "Returns text segments", "Shared Buffer")
+
+Rel(backend_api, llm, "Send text segments for filtering", "httpx", $tags="async")
+Rel(backend_api, nlp_engine, "9. Extracts entities", "ProcessPoolExecutor")
+
+Rel(backend_api, graph_db, "Queries diagnostic paths", "Cypher")
+Rel(backend_api, doc_db, "Persists session state", "SQL")
+
+Rel(backend_api, dashboard, "Pushes insights", "WebSockets", $tags="streaming")
+Rel(clinician, dashboard, "Views suggestions", "UI Render")
+
+SHOW_LEGEND()
+@enduml

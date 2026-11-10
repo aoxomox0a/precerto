@@ -1,0 +1,771 @@
+.consultation-recorder {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.recorder-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f5 100%);
+  border: 2px solid #e0e7ff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.recorder-card:hover {
+  border-color: #c5cff5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.recorder-header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recorder-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1a202c;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.patient-info {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #718096;
+  font-weight: 500;
+}
+
+.recorder-display {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  border: 1px solid #cbd5e0;
+}
+
+.recording-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #f7fafc;
+  border-radius: 6px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+}
+
+.recording-indicator.active {
+  background: #fff5f5;
+  border: 1px solid #fed7d7;
+}
+
+.pulse {
+  width: 12px;
+  height: 12px;
+  background: #e53e3e;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+.status-text {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2d3748;
+  letter-spacing: 0.5px;
+}
+
+.timer {
+  font-family: 'Monaco', 'Menlo', monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2b60de;
+  letter-spacing: 2px;
+  margin: 1rem 0;
+}
+
+.completion-badge {
+  display: inline-block;
+  background: #c6f6d5;
+  color: #22863a;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid #9ae6b4;
+}
+
+.recorder-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-record {
+  background: #e53e3e;
+  color: white;
+  border: 2px solid #e53e3e;
+}
+
+.btn-record:hover:not(:disabled) {
+  background: #c53030;
+  border-color: #c53030;
+  box-shadow: 0 4px 12px rgba(229, 62, 62, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-pause {
+  background: #f6ad55;
+  color: white;
+  border: 2px solid #f6ad55;
+}
+
+.btn-pause:hover:not(:disabled) {
+  background: #ed8936;
+  border-color: #ed8936;
+  box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-resume {
+  background: #48bb78;
+  color: white;
+  border: 2px solid #48bb78;
+}
+
+.btn-resume:hover:not(:disabled) {
+  background: #38a169;
+  border-color: #38a169;
+  box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-stop {
+  background: #2d3748;
+  color: white;
+  border: 2px solid #2d3748;
+}
+
+.btn-stop:hover:not(:disabled) {
+  background: #1a202c;
+  border-color: #1a202c;
+  box-shadow: 0 4px 12px rgba(45, 55, 72, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-download {
+  background: #2b60de;
+  color: white;
+  border: 2px solid #2b60de;
+}
+
+.btn-download:hover:not(:disabled) {
+  background: #1e42a5;
+  border-color: #1e42a5;
+  box-shadow: 0 4px 12px rgba(43, 96, 222, 0.3);
+  transform: translateY(-2px);
+}
+
+.recorder-info {
+  background: #edf2f7;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.recorder-info p {
+  margin: 0.25rem 0;
+  color: #2d3748;
+  font-size: 0.9rem;
+}
+
+.info-small {
+  color: #718096;
+  font-size: 0.85rem !important;
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .recorder-card {
+    padding: 1rem;
+  }
+
+  .timer {
+    font-size: 2rem;
+  }
+
+  .recorder-controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .recorder-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}
+
+/* Clinical copilot visual refinement */
+.consultation-recorder {
+  margin: 0;
+}
+
+.consultation-recorder .recorder-card {
+  background: white;
+  border: 1px solid rgba(129, 151, 161, 0.16);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 16px 38px rgba(31, 54, 64, 0.07);
+}
+
+.consultation-recorder .recorder-card:hover {
+  border-color: rgba(15, 118, 110, 0.24);
+  box-shadow: 0 20px 45px rgba(31, 54, 64, 0.09);
+}
+
+.recorder-header h3 {
+  color: #12333f;
+  font-size: 1.18rem;
+}
+
+.patient-info {
+  color: #617783;
+}
+
+.recorder-display {
+  background: #f8fbfb;
+  border: 1px solid rgba(129, 151, 161, 0.14);
+  border-radius: 18px;
+}
+
+.recording-indicator {
+  background: white;
+  border-radius: 999px;
+}
+
+.recording-indicator.active {
+  background: #fff7ed;
+  border: 1px solid rgba(251, 146, 60, 0.28);
+}
+
+.timer {
+  color: #12333f;
+  letter-spacing: 0;
+}
+
+.completion-badge {
+  background: #dff5f2;
+  color: #0f766e;
+  border: 0;
+  border-radius: 999px;
+}
+
+.consultation-recorder .btn {
+  border-radius: 999px;
+  box-shadow: none;
+}
+
+.btn-record {
+  background: #b45309;
+  border-color: #b45309;
+}
+
+.btn-record:hover:not(:disabled) {
+  background: #92400e;
+  border-color: #92400e;
+}
+
+.btn-pause {
+  background: #d97706;
+  border-color: #d97706;
+}
+
+.btn-resume,
+.btn-download {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.btn-resume:hover:not(:disabled),
+.btn-download:hover:not(:disabled) {
+  background: #115e59;
+  border-color: #115e59;
+  box-shadow: 0 12px 24px rgba(15, 118, 110, 0.18);
+}
+
+.btn-stop {
+  background: #31515d;
+  border-color: #31515d;
+}
+
+.recorder-info {
+  background: #f8fbfb;
+  border: 1px solid rgba(129, 151, 161, 0.14);
+  border-radius: 16px;
+}
+
+.recorder-info p {
+  color: #31515d;
+}
+
+.info-small {
+  color: #617783 !important;
+}
+
+/* Embedded recording utility */
+.consultation-recorder .recorder-card {
+  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(180px, 0.9fr) minmax(230px, 1fr) auto;
+  gap: 0.9rem;
+  padding: 0.9rem 1rem;
+}
+
+.recorder-header {
+  margin-bottom: 0;
+}
+
+.recorder-header h3 {
+  font-size: 1rem;
+}
+
+.patient-info {
+  font-size: 0.86rem;
+}
+
+.recorder-display {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 0;
+  padding: 0.65rem 0.75rem;
+}
+
+.recording-indicator {
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+}
+
+.status-text {
+  font-size: 0.76rem;
+}
+
+.timer {
+  font-size: 1.35rem;
+  margin: 0;
+}
+
+.completion-badge {
+  font-size: 0.78rem;
+  padding: 0.36rem 0.65rem;
+}
+
+.recorder-controls {
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+
+.consultation-recorder .btn {
+  font-size: 0.85rem;
+  padding: 0.55rem 0.9rem;
+}
+
+.recorder-info {
+  grid-column: 1 / -1;
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+}
+
+.recorder-info p {
+  font-size: 0.82rem;
+}
+
+@media (max-width: 860px) {
+  .consultation-recorder .recorder-card {
+    grid-template-columns: 1fr;
+  }
+
+  .recorder-display,
+  .recorder-controls {
+    justify-content: flex-start;
+  }
+}
+
+/* Minimal clinician recording utility */
+.consultation-recorder {
+  margin-bottom: 1.25rem;
+}
+
+.consultation-recorder .recorder-card {
+  background: #fff;
+  border-color: rgba(129, 151, 161, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(31, 54, 64, 0.045);
+  gap: 1rem;
+  grid-template-columns: minmax(190px, 0.9fr) auto auto;
+  padding: 0.8rem 1rem;
+}
+
+.consultation-recorder .recorder-card:hover {
+  border-color: rgba(129, 151, 161, 0.14);
+  box-shadow: 0 10px 26px rgba(31, 54, 64, 0.052);
+}
+
+.recorder-header h3 {
+  color: #173540;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.patient-info {
+  color: #78909a;
+  font-size: 0.8rem;
+}
+
+.recorder-display {
+  background: transparent;
+  border: 0;
+  gap: 0.85rem;
+  padding: 0;
+}
+
+.recording-indicator {
+  background: transparent;
+  border: 0;
+  color: #617783;
+  padding: 0;
+}
+
+.recording-indicator.active {
+  background: transparent;
+  border: 0;
+}
+
+.status-text {
+  color: #617783;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+}
+
+.timer {
+  color: #173540;
+  font-size: 1.15rem;
+  font-weight: 680;
+}
+
+.completion-badge,
+.recorder-info {
+  display: none;
+}
+
+.consultation-recorder .btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 680;
+  min-height: 36px;
+  padding: 0.45rem 0.8rem;
+  transform: none;
+}
+
+.btn-record,
+.btn-resume,
+.btn-download {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.btn-pause,
+.btn-stop {
+  background: #fff;
+  border-color: rgba(129, 151, 161, 0.2);
+  color: #31515d;
+}
+
+.btn-record:hover:not(:disabled),
+.btn-resume:hover:not(:disabled),
+.btn-download:hover:not(:disabled) {
+  background: #115e59;
+  border-color: #115e59;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-pause:hover:not(:disabled),
+.btn-stop:hover:not(:disabled) {
+  background: #f8fbfb;
+  border-color: rgba(129, 151, 161, 0.28);
+  box-shadow: none;
+  color: #173540;
+  transform: none;
+}
+
+.btn-save {
+  margin-top: 0.75rem;
+  background: #0f766e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 1.4rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-save:hover {
+  background: #115e59;
+}
+
+.save-confirm {
+  margin-top: 0.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0f766e;
+}
+
+/* ── Save banner ──────────────────────────────────────────── */
+.recorder-save-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #f0fdf9;
+  border: 1.5px solid rgba(15, 118, 110, 0.28);
+  border-radius: 14px;
+  padding: 0.85rem 1.1rem;
+  margin-top: 0.75rem;
+}
+
+.recorder-save-banner-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.recorder-save-banner-text strong {
+  font-size: 0.92rem;
+  color: #0f4c45;
+  font-weight: 750;
+}
+
+.recorder-save-banner-text span {
+  font-size: 0.78rem;
+  color: #617783;
+}
+
+.recorder-save-cta {
+  background: #0f766e;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 750;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, box-shadow 0.15s;
+  flex-shrink: 0;
+}
+
+.recorder-save-cta:hover {
+  background: #115e59;
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.22);
+}
+
+.recorder-save-confirm {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.88rem;
+  color: #31515d;
+  width: 100%;
+}
+
+.recorder-save-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #0f766e;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.72rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+/* ── Doctor Notes Panel ─────────────────────────────────────── */
+
+.doctor-notes-panel {
+  background: white;
+  border: 2px solid rgba(16, 185, 129, 0.2);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin: 16px 0;
+  box-shadow: 0 2px 12px rgba(16, 185, 129, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.doctor-notes-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.doctor-notes-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.doctor-notes-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.doctor-notes-header h4 {
+  margin: 0 0 3px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #065f46;
+}
+
+.doctor-notes-header p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.doctor-notes-saved-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #059669;
+  background: #d1fae5;
+  border: 1px solid #6ee7b7;
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.doctor-notes-textarea {
+  width: 100%;
+  border: 1.5px solid rgba(16, 185, 129, 0.3);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  color: #1f2937;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  background: #fafffe;
+}
+
+.doctor-notes-textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.doctor-notes-textarea::placeholder {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.doctor-notes-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.doctor-notes-count {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.doctor-notes-save-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.doctor-notes-save-btn:hover:not(:disabled) {
+  background: #059669;
+}
+
+.doctor-notes-save-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.doctor-notes-save-btn:disabled {
+  background: #d1fae5;
+  color: #6ee7b7;
+  cursor: default;
+}

@@ -1,0 +1,25 @@
+@startuml
+skinparam dpi 300
+!NEW_C4_STYLE=1
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+title System Context Diagram for Diagnostic Decision Support System
+
+Person(patient, "Patient", "Provides medical history via form")
+Person(clinician, "Clinician", "Reviews filled out form before consultation, and diagnostic suggestions during consultation")
+
+System(ddss, "Diagnostic Decision Support", "Collects patient data, processes live audio, and provides diagnostic decision support")
+System_Ext(api, "External API", "Open API providing real-time data", $tags="external")
+System_Ext(ehr, "Hospital EHR", "Stores active patient records (Labs, Vitals, Conditions).", $tags="external")
+
+Rel(patient, ddss, "Provides history")
+
+Rel(ddss, api, "Fetches real-time data", $tags="external")
+Rel(ddss, ehr, "Fetches clinical context", "SMART on FHIR")
+
+Rel(clinician, ddss, "Conducts consultation (captured by system)")
+Rel(ddss, clinician, "Returns near real-time diagnostic suggestions")
+
+SHOW_LEGEND()
+@enduml

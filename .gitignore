@@ -1,0 +1,80 @@
+# --- Python & FastAPI ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+
+*.db
+node_modules/
+
+# --- uv Dependency Manager ---
+# Ignore the virtual environment directory created by uv
+.venv/
+# If you use a tool to manage python versions, ignore the version file
+.python-version
+# Note: Professional teams usually COMMIT uv.lock to ensure reproducibility.
+# Do NOT add uv.lock here unless you are strictly prototyping solo.
+
+# --- Environment & Secrets ---
+.env
+.env.*
+!.env.example
+secrets.json
+
+# --- Inference Models (Whisper / CTranslate2) ---
+# Large model weights should stay local or in specialized storage (LFS)
+models/
+*.bin
+*.model
+*.gz
+*.pt
+*.onnx
+
+# --- Data & Reasoning Layer (Neo4j / SNOMED) ---
+# Do not commit raw database files or large CSV datasets
+neo4j/data/
+neo4j/logs/
+neo4j/import/
+*.csv
+*.json
+!package.json
+!package-lock.json
+
+# --- Logs & Performance ---
+*.log
+perf.data
+perf.data.old
+
+# --- IDEs & Editors ---
+# Tailored for your Neovim and Fedora setup
+.nvim/
+*.swp
+*.swo
+Session.vim
+.vscode/
+.idea/
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+
+!ui/
